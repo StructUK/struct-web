@@ -85,7 +85,7 @@ export default function ContactForm() {
 
       <div className="flex flex-col gap-2">
         <label htmlFor="contact-message" className="text-sm text-text-secondary">
-          What would you like to automate?
+          Tell us your problem
         </label>
         <textarea
           id="contact-message"

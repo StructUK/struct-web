@@ -69,7 +69,7 @@ export default function Contact() {
                   Based in
                 </span>
                 <p className="mt-2 text-text-primary">
-                  the UK · Working with businesses across England
+                  Manchester · Working with businesses throughout the UK
                 </p>
               </div>
             </div>
