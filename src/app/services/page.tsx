@@ -36,10 +36,6 @@ const HOSTING_ICON: IconShape = {
 
 const EMAIL_ICON: IconShape = { rect: true, path: "m3 7 9 6 9-6" };
 
-const RETAINER_ICON: IconShape = {
-  path: "M4 9a8 8 0 0 1 14.5-4.5M20 4v5h-5M20 15a8 8 0 0 1-14.5 4.5M4 20v-5h5",
-};
-
 const AUTOMATION_EXAMPLES = [
   "Enquiry auto-reply and lead logging - respond immediately, log every contact automatically",
   "Invoice chasing sequences - reminders sent at 7, 14, and 30 days without you lifting a finger",
@@ -72,7 +68,7 @@ const FAQS = [
   },
   {
     q: "What if something breaks?",
-    a: "All setups include a testing period and initial support. On a retainer, we monitor and fix things proactively. For one-off projects, we offer ongoing support packages - or you can contact us and we'll sort it.",
+    a: "All setups include a testing period and initial support. If something breaks after that, you can contact us and we'll sort it - or ask about an ongoing support arrangement if you'd rather things were monitored proactively.",
   },
 ];
 
@@ -132,7 +128,7 @@ export default function Services() {
               ))}
             </div>
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £500 per workflow.</span> Most
+              <span className="text-text-primary">From £250 per workflow.</span> Most
               projects are quoted as a fixed package - we scope it on the call, quote
               before we start.
             </div>
@@ -177,7 +173,7 @@ export default function Services() {
               ))}
             </div>
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £50/month per site.</span>{" "}
+              <span className="text-text-primary">From £20/month per site.</span>{" "}
               Includes monitoring, backups, and SSL. Ask about migration from your
               current host.
             </div>
@@ -213,35 +209,6 @@ export default function Services() {
               <span className="text-text-primary">From £15/month per domain.</span>{" "}
               Includes setup, DNS configuration, and ongoing management. No per-user
               fees.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative py-8">
-        <SectionSpine side="left" branch="out" />
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
-              <ServiceIcon shape={RETAINER_ICON} />
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              Monthly Support Retainer
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              A technical partner, without the agency overhead
-            </h2>
-            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
-              <p>
-                For businesses that want ongoing support without hiring in-house. We
-                monitor your systems, keep everything updated, handle minor changes, and
-                are always a message away when something comes up.
-              </p>
-              <p>No tickets. No account managers. Just someone who knows your setup and keeps it running.</p>
-            </div>
-            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £150/month.</span> Scope varies by
-              setup - we&apos;ll agree what&apos;s covered before you sign anything.
             </div>
           </Reveal>
         </div>

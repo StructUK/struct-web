@@ -55,12 +55,6 @@ const SERVICE_CARDS: { tag: string; title: string; desc: string; icon: IconShape
     desc: "Professional email addresses that actually land in inboxes. Set up right, with the records that matter.",
     icon: { rect: true, path: "m3 7 9 6 9-6" },
   },
-  {
-    tag: "Retainer",
-    title: "Monthly Retainer",
-    desc: "Ongoing support without the agency overhead. We monitor, maintain, and make changes - so things keep working.",
-    icon: { path: "M4 9a8 8 0 0 1 14.5-4.5M20 4v5h-5M20 15a8 8 0 0 1-14.5 4.5M4 20v-5h5" },
-  },
 ];
 
 const STEPS = [
@@ -174,7 +168,7 @@ export default function Home() {
               Automation built around your business.
             </h2>
           </Reveal>
-          <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             {SERVICE_CARDS.map((s) => (
               <div
                 key={s.title}
@@ -265,9 +259,8 @@ export default function Home() {
             <div className="eyebrow justify-center">Pricing</div>
             <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Straightforward pricing.</h2>
             <p className="mx-auto mt-4 max-w-lg text-text-secondary">
-              Most automation setups start from £500. Monthly support and hosting from
-              £150/month. No retainers unless you want them - we quote per project and
-              keep it simple.
+              Most automation setups start from £250 per workflow. Website hosting from
+              £20/month. We quote per project and keep it simple.
             </p>
             <Link
               href="/services"
