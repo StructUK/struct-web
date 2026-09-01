@@ -14,7 +14,7 @@ export default function Footer() {
             className="h-[24px] w-auto"
           />
           <p className="text-sm text-text-secondary">
-            AI automation for UK small businesses.
+            AI Automation and Digital Services.
           </p>
         </div>
         <div className="flex flex-wrap gap-7">
