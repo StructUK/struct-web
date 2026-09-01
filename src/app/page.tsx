@@ -115,9 +115,9 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <div className="eyebrow justify-center">AI Automation Consultancy</div>
           <h1 className="mt-5 text-[2.75rem] sm:text-[3.5rem]">
-            We build the systems.
+            More Business,
             <br />
-            <em className="text-green-light not-italic">You run the business.</em>
+            <em className="text-green-light not-italic">Less Boring.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-text-secondary">
             Struct Solutions creates AI-powered automations that handle your follow-ups,
