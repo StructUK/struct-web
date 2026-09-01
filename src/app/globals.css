@@ -96,6 +96,16 @@ button {
   transform: translateY(24px);
 }
 
+.card-hover {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-hover:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 32px var(--green-glow);
+  transform: translateY(-4px);
+}
+
 .ticker-track {
   display: flex;
   width: max-content;

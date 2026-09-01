@@ -2,74 +2,77 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Lattice from "@/components/Lattice";
 import Reveal from "@/components/Reveal";
+import SectionSpine from "@/components/SectionSpine";
+import GlowBloom from "@/components/GlowBloom";
+import SectionDivider from "@/components/SectionDivider";
+import ServiceIcon, { type IconShape } from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Web development, SEO, paid ads, email marketing, AI automation and more. Everything a growing business needs online.",
+    "AI workflow automation, website hosting, email hosting, and ongoing support - everything a growing business needs to stop doing admin manually.",
   alternates: { canonical: "/services" },
 };
 
-const SERVICES = [
+const AUTOMATION_ICON: IconShape = {
+  path: "M12 7v6M12 13 6.3 17.3M12 13l5.7 4.3",
+  circles: [
+    { cx: 12, cy: 5, r: 2 },
+    { cx: 5, cy: 19, r: 2 },
+    { cx: 19, cy: 19, r: 2 },
+  ],
+};
+
+const HOSTING_ICON: IconShape = {
+  rects: [
+    { x: 3, y: 4, width: 18, height: 7, rx: 1.5 },
+    { x: 3, y: 13, width: 18, height: 7, rx: 1.5 },
+  ],
+  circles: [
+    { cx: 7, cy: 7.5, r: 0.75 },
+    { cx: 7, cy: 16.5, r: 0.75 },
+  ],
+};
+
+const EMAIL_ICON: IconShape = { rect: true, path: "m3 7 9 6 9-6" };
+
+const RETAINER_ICON: IconShape = {
+  path: "M4 9a8 8 0 0 1 14.5-4.5M20 4v5h-5M20 15a8 8 0 0 1-14.5 4.5M4 20v-5h5",
+};
+
+const AUTOMATION_EXAMPLES = [
+  "Enquiry auto-reply and lead logging - respond immediately, log every contact automatically",
+  "Invoice chasing sequences - reminders sent at 7, 14, and 30 days without you lifting a finger",
+  "Booking confirmations and reminders - automatic emails triggered when a booking is made",
+  "Review request sequences - ask for a Google or Trustpilot review days after a job is done",
+  "Monthly report generation - pull data, format it, email it - no manual work",
+  "CRM updates from form submissions - every lead captured and logged without copy-pasting",
+];
+
+const HOSTING_INCLUDED = [
+  "EU-based VPS hosting with 99.9% uptime",
+  "Cloudflare CDN and DDoS protection on every domain",
+  "Automatic SSL certificates - always HTTPS",
+  "Daily backups",
+  "Uptime monitoring with instant alerts",
+];
+
+const FAQS = [
   {
-    tag: "Web Dev",
-    title: "Web Development",
-    desc: "Fast, scalable sites engineered for performance. Clean architecture, lightning load times, and conversion-focused UX that turns visitors into leads. Every site we build is built to rank and built to last.",
-    path: "M9 4 5 12l4 8M15 4l4 8-4 8M13 4l-2 16",
+    q: "Do I need technical knowledge to work with you?",
+    a: "None at all. We handle the technical side completely. You describe what you want to achieve in plain language - we make it happen and explain what we've built.",
   },
   {
-    tag: "SEO",
-    title: "SEO Strategy",
-    desc: "Organic growth that compounds. Keyword research, technical audits, content strategy, and link building — all measured by traffic and revenue, not vanity metrics. We build search presence that doesn't disappear when you pause a budget.",
-    path: "M3 18 9 12l4 4 8-9M21 7h-5M21 7v5",
+    q: "How quickly can you get something live?",
+    a: "Most automation projects are live within 3-7 days of the call. Hosting and email setup is usually same-day or next-day.",
   },
   {
-    tag: "GBP",
-    title: "Google Business Profile",
-    desc: "Dominate local search results. We optimise and manage your Google Business Profile and wider digital presence so you appear when customers are actively searching for your services — not your competitors.",
-    path: "M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z",
-    circle: { cx: 12, cy: 9, r: 2.4 },
+    q: "What tools does the automation connect to?",
+    a: "Anything you're already using - Gmail, Outlook, Google Sheets, Notion, Xero, QuickBooks, Stripe, Calendly, Typeform, and hundreds more. If it has an API or a webhook, we can connect to it.",
   },
   {
-    tag: "Growth",
-    title: "Growth Support & Reporting",
-    desc: "Continuous optimisation and transparent reporting. Monthly insights, clear metrics, and proactive recommendations — so your growth never plateaus. We track organic traffic, keyword rankings, conversions, and ROI in real time.",
-    path: "M3 3v18h18M18 17V9M13 17V5M8 17v-3",
-  },
-  {
-    tag: "Paid Ads",
-    title: "Paid Ads (Google & Meta)",
-    desc: "Targeted paid campaigns that turn budget into pipeline. We manage Google Ads and Meta Ads end-to-end — audience research, creative, copy, bidding strategy, and conversion tracking — maximising every pound you spend.",
-    circles3: [
-      { cx: 12, cy: 12, r: 9 },
-      { cx: 12, cy: 12, r: 5 },
-      { cx: 12, cy: 12, r: 1 },
-    ],
-  },
-  {
-    tag: "Email",
-    title: "Email Marketing",
-    desc: "Your audience, nurtured. We build and run email strategies that drive repeat business, warm cold leads, and keep your brand front of mind — from campaign design to automation flows and list growth.",
-    rect: true,
-    path: "m3 7 9 6 9-6",
-  },
-  {
-    tag: "Automation",
-    title: "AI & Workflow Automation",
-    desc: "Powered by Struct. We identify the repetitive, time-consuming tasks in your business and replace them with intelligent automated systems — from lead processing and CRM automation to AI-assisted content and reporting. Work smarter, not harder.",
-    path: "M12 7v6M12 13 6.3 17.3M12 13l5.7 4.3",
-    circles: [
-      { cx: 12, cy: 5, r: 2 },
-      { cx: 5, cy: 19, r: 2 },
-      { cx: 19, cy: 19, r: 2 },
-    ],
-    badge: true,
-  },
-  {
-    tag: "Bespoke",
-    title: "Bespoke Solutions",
-    desc: "No two businesses are the same. If your challenge doesn't fit a category, we build around it. Bring us your problem — we'll build you the solution. From custom integrations to full digital transformations, Struct delivers what you actually need.",
-    path: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+    q: "What if something breaks?",
+    a: "All setups include a testing period and initial support. On a retainer, we monitor and fix things proactively. For one-off projects, we offer ongoing support packages - or you can contact us and we'll sort it.",
   },
 ];
 
@@ -80,77 +83,205 @@ export default function Services() {
         <Lattice variant="page" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
           <div className="eyebrow justify-center">Services</div>
-          <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-            Everything you need.
-            <br />
-            <em className="text-green-light not-italic">Nothing you don&apos;t.</em>
-          </h1>
+          <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">What we build.</h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            We don&apos;t sell packages — we build solutions around your business.
-            Here&apos;s what&apos;s in our toolkit.
+            Pick one thing that&apos;s eating your time. We&apos;ll automate it. Here&apos;s
+            what that looks like in practice.
           </p>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((s) => (
-              <div
-                key={s.title}
-                className="relative rounded-2xl border border-border bg-bg-2 p-7"
-              >
-                {s.badge && (
-                  <span className="absolute top-6 right-6 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
-                    New
-                  </span>
-                )}
-                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-green-glow">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5"
-                    fill="none"
-                    stroke="var(--green-light)"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {s.rect && <rect x="3" y="5" width="18" height="14" rx="2" />}
-                    {s.path && <path d={s.path} />}
-                    {s.circle && <circle cx={s.circle.cx} cy={s.circle.cy} r={s.circle.r} />}
-                    {s.circles?.map((c, i) => (
-                      <circle key={i} cx={c.cx} cy={c.cy} r={c.r} />
-                    ))}
-                    {s.circles3?.map((c, i) => (
-                      <circle key={i} cx={c.cx} cy={c.cy} r={c.r} />
-                    ))}
-                  </svg>
+      <section className="relative py-16">
+        <SectionSpine side="left" branch="out" />
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              Core service
+            </span>
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={AUTOMATION_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              AI Workflow Automation
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              Automate the tasks that keep coming back
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                Every business has a handful of tasks that happen over and over - chasing
+                invoices, responding to enquiries, updating spreadsheets, sending
+                confirmations. We build automations that do these things automatically,
+                reliably, and without you having to think about them.
+              </p>
+              <p>
+                We use n8n as our core automation tool, connected to whatever software
+                you&apos;re already using - Gmail, Outlook, Google Sheets, Notion, Xero,
+                and hundreds more. No ripping out your current setup.
+              </p>
+            </div>
+            <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
+              Examples of what we build
+            </p>
+            <div className="mt-3 flex flex-col gap-2">
+              {AUTOMATION_EXAMPLES.map((e) => (
+                <div key={e} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
+                  <span className="text-sm text-text-secondary">{e}</span>
                 </div>
-                <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-                  {s.tag}
-                </span>
-                <h3 className="mt-2 text-lg">{s.title}</h3>
-                <p className="mt-2 text-sm text-text-secondary">{s.desc}</p>
+              ))}
+            </div>
+            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
+              <span className="text-text-primary">From £500 per workflow.</span> Most
+              projects are quoted as a fixed package - we scope it on the call, quote
+              before we start.
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <SectionSpine side="right" branch="in" />
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={HOSTING_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Website Hosting &amp; Management
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              Fast, secure hosting you don&apos;t have to think about
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                We host websites on enterprise-grade European infrastructure with
+                Cloudflare protecting every domain. You get fast load times, automatic
+                HTTPS, and us as the single point of contact when anything needs
+                changing.
+              </p>
+              <p>
+                No shared hosting, no mystery downtimes, no &quot;contact your hosting
+                provider&quot; when something breaks. We are the hosting provider.
+              </p>
+            </div>
+            <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
+              What&apos;s included
+            </p>
+            <div className="mt-3 flex flex-col gap-2">
+              {HOSTING_INCLUDED.map((e) => (
+                <div key={e} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
+                  <span className="text-sm text-text-secondary">{e}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
+              <span className="text-text-primary">From £50/month per site.</span>{" "}
+              Includes monitoring, backups, and SSL. Ask about migration from your
+              current host.
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={EMAIL_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Email Hosting &amp; Setup
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              Professional email that actually gets delivered
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                We set up and manage professional email addresses on your domain - with
+                the proper DNS records (SPF, DKIM, DMARC) that stop your emails going to
+                spam. Something most businesses never think about until it&apos;s too
+                late.
+              </p>
+              <p>
+                Want email automation on top? We can build that in. Your enquiry form
+                auto-responds. Your invoices chase themselves.
+              </p>
+            </div>
+            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
+              <span className="text-text-primary">From £15/month per domain.</span>{" "}
+              Includes setup, DNS configuration, and ongoing management. No per-user
+              fees.
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <SectionSpine side="left" branch="out" />
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={RETAINER_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Monthly Support Retainer
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              A technical partner, without the agency overhead
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                For businesses that want ongoing support without hiring in-house. We
+                monitor your systems, keep everything updated, handle minor changes, and
+                are always a message away when something comes up.
+              </p>
+              <p>No tickets. No account managers. Just someone who knows your setup and keeps it running.</p>
+            </div>
+            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
+              <span className="text-text-primary">From £150/month.</span> Scope varies by
+              setup - we&apos;ll agree what&apos;s covered before you sign anything.
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      <section className="relative py-24">
+        <SectionSpine side="right" branch="in" />
+        <div className="mx-auto max-w-3xl px-6">
+          <Reveal className="mb-12 text-center">
+            <div className="eyebrow justify-center">FAQ</div>
+            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Common questions.</h2>
+          </Reveal>
+          <Reveal className="flex flex-col gap-5">
+            {FAQS.map((f) => (
+              <div key={f.q} className="rounded-2xl border border-border bg-bg-2 p-6">
+                <h3 className="text-base">{f.q}</h3>
+                <p className="mt-2 text-sm text-text-secondary">{f.a}</p>
               </div>
             ))}
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-border py-24">
-        <div className="mx-auto max-w-2xl px-6 text-center">
+      <section className="relative overflow-hidden border-t border-border py-24">
+        <GlowBloom className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size={460} />
+        <div className="relative mx-auto max-w-2xl px-6 text-center">
           <Reveal>
             <h2 className="text-3xl sm:text-[2.25rem]">Not sure where to start?</h2>
             <p className="mx-auto mt-4 max-w-lg text-text-secondary">
-              Book a free audit. We&apos;ll map your current digital presence, identify
-              the gaps, and tell you exactly what would move the needle — no
-              commitment, no pressure.
+              Book a free call. We&apos;ll talk through what&apos;s slowing you down and
+              tell you honestly whether automation would help - no pitch, no pressure.
             </p>
             <Link
               href="/contact"
+              prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Get a Free Audit →
+              Book a free call
             </Link>
           </Reveal>
         </div>

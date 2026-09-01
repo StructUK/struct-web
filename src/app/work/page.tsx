@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Lattice from "@/components/Lattice";
 import Reveal from "@/components/Reveal";
+import SectionSpine from "@/components/SectionSpine";
+import GlowBloom from "@/components/GlowBloom";
 
 export const metadata: Metadata = {
-  title: "Our Work",
+  title: "Case Studies",
   description:
-    "Case studies and client sites built by Struct Solutions for performance, conversions, and search visibility.",
+    "Automation projects built by Struct Solutions - case studies coming soon.",
   alternates: { canonical: "/work" },
+  robots: { index: false, follow: false },
 };
 
-const LOCKED = [1, 2, 3];
+const LOCKED = [1, 2, 3, 4];
 
 export default function Work() {
   return (
@@ -19,77 +21,23 @@ export default function Work() {
       <section className="relative overflow-hidden pt-44 pb-24">
         <Lattice variant="page" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-          <div className="eyebrow justify-center">Our Work</div>
+          <div className="eyebrow justify-center">Case Studies</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-            Built to perform.
+            Automation built to be
             <br />
-            <em className="text-green-light not-italic">Built to be found.</em>
+            <em className="text-green-light not-italic">seen, not just felt.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            Every site we deliver is engineered from the ground up — fast,
-            conversion-focused, and built to rank.
+            We&apos;re early into building out our automation case studies. Real client
+            projects will land here as they go live.
           </p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="relative py-16">
+        <SectionSpine side="right" branch="in" />
         <div className="mx-auto max-w-6xl px-6">
           <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <div className="overflow-hidden rounded-2xl border border-border bg-bg-2">
-              <div className="aspect-[16/10] overflow-hidden">
-                <Image
-                  src="https://res.cloudinary.com/dkcfkzzla/image/upload/q_auto/f_auto/v1780899837/image_2026-06-08_072356690_yg07ec.png"
-                  alt="Based Media Group"
-                  width={800}
-                  height={500}
-                  unoptimized
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-7">
-                <div className="flex flex-wrap gap-2">
-                  {["Featured", "Web Dev", "SEO", "Branding"].map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-text-secondary"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="mt-4 text-lg">Based Media Group</h3>
-                <p className="mt-2 text-sm text-text-secondary">
-                  A bold digital home for a creative solutions powerhouse. Based Media
-                  Group blends content, strategy, and production — we built them a site
-                  that matches their ambition: sharp, fast, and impossible to ignore.
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl border border-border bg-bg-2">
-              <div className="flex aspect-[16/10] items-center justify-center bg-bg-3 px-6 text-center text-sm text-text-muted">
-                TechPod screenshot — asset pending
-              </div>
-              <div className="p-7">
-                <div className="flex flex-wrap gap-2">
-                  {["Web Dev", "SEO", "GBP"].map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-text-secondary"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="mt-4 text-lg">TechPod</h3>
-                <p className="mt-2 text-sm text-text-secondary">
-                  A high-converting site for Manchester&apos;s leading tech repair
-                  specialists. Built for speed, local search dominance, and walk-in
-                  conversions — rated 4.9/5 by 800+ customers.
-                </p>
-              </div>
-            </div>
-
             {LOCKED.map((i) => (
               <div
                 key={i}
@@ -114,9 +62,9 @@ export default function Work() {
                   <span className="rounded-full border border-border px-3 py-1 text-xs text-text-secondary">
                     TBC
                   </span>
-                  <h3 className="mt-4 text-lg">New Project — Coming Soon</h3>
+                  <h3 className="mt-4 text-lg">Client Project - Coming Soon</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    Reserved for a current client build. Details to follow once the
+                    Reserved for a future automation build. Details to follow once the
                     project goes live.
                   </p>
                 </div>
@@ -126,15 +74,17 @@ export default function Work() {
         </div>
       </section>
 
-      <section className="border-t border-border py-24">
-        <div className="mx-auto max-w-2xl px-6 text-center">
+      <section className="relative overflow-hidden border-t border-border py-24">
+        <GlowBloom className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size={460} />
+        <div className="relative mx-auto max-w-2xl px-6 text-center">
           <Reveal>
-            <h2 className="text-3xl sm:text-[2.25rem]">Want results like these?</h2>
+            <h2 className="text-3xl sm:text-[2.25rem]">Want to be our next case study?</h2>
             <Link
               href="/contact"
+              prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Start with a Free Audit →
+              Book a free call →
             </Link>
           </Reveal>
         </div>

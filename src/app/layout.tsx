@@ -19,11 +19,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.struct.solutions"),
   title: {
-    default: "Struct Solutions — Digital Growth Agency",
-    template: "%s — Struct Solutions",
+    default: "Struct Solutions — AI Automation for Small Businesses",
+    template: "%s - Struct Solutions",
   },
   description:
-    "High-performance websites and SEO strategies that increase traffic, leads, and revenue for UK businesses.",
+    "Struct Solutions builds AI-powered workflow automations for UK small businesses. Stop doing it manually — we automate your enquiries, follow-ups, and admin.",
   icons: {
     icon: [
       { url: "/imgs/favicon-32x32.png", sizes: "32x32", type: "image/png" },

@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 
 const LINKS = [
   { href: "/services", label: "Services" },
-  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/#process", label: "Process" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -17,6 +15,7 @@ export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,12 +23,10 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setMenuOpen(false);
-  }, [pathname]);
-
-  const isActive = (href: string) =>
-    href === "/#process" ? false : href === pathname;
+  }
 
   return (
     <nav
@@ -40,7 +37,7 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between py-5">
-        <Link href="/" aria-label="Struct Solutions home">
+        <Link href="/" aria-label="Struct Solutions home" prefetch={false}>
           <Image
             src="/imgs/structlogo1w.png"
             alt="Struct Solutions"
@@ -56,8 +53,9 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={false}
               className={`relative text-[0.92rem] transition-colors ${
-                isActive(link.href)
+                link.href === pathname
                   ? "text-text-primary after:absolute after:left-0 after:right-0 after:-bottom-2 after:h-[2px] after:bg-green"
                   : "text-text-secondary hover:text-text-primary"
               }`}
@@ -70,9 +68,10 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
+            prefetch={false}
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-green px-5 py-2.5 text-sm font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
           >
-            Free Audit
+            Book a free call
           </Link>
           <button
             aria-label="Toggle menu"
@@ -105,8 +104,9 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={false}
               className={`px-6 py-4 border-t border-border first:border-t-0 text-[0.95rem] ${
-                isActive(link.href) ? "text-text-primary" : "text-text-secondary"
+                link.href === pathname ? "text-text-primary" : "text-text-secondary"
               }`}
             >
               {link.label}
@@ -114,9 +114,10 @@ export default function Nav() {
           ))}
           <Link
             href="/contact"
+            prefetch={false}
             className="mx-6 my-4 flex justify-center rounded-full bg-green px-5 py-3 font-medium text-white"
           >
-            Free Audit
+            Book a free call
           </Link>
         </div>
       )}
