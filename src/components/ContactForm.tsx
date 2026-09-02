@@ -3,9 +3,9 @@
 import emailjs from "@emailjs/browser";
 import { useState, type FormEvent } from "react";
 
-const SERVICE_ID = "service_6tji8xl";
-const TEMPLATE_ID = "template_p3k2p5u";
-const PUBLIC_KEY = "cnhoeGP0DPNEvIz9A";
+const SERVICE_ID = "service_8wjxfiw";
+const TEMPLATE_ID = "template_5dbqcal";
+const PUBLIC_KEY = "547Y5-X7Qy3MgqjUh";
 
 type Status = "idle" | "sending" | "success" | "error";
 
