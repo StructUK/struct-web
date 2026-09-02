@@ -25,7 +25,9 @@ export default function ContactForm() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
+          from_name: name,
           from_email: formData.get("email"),
+          business_name: business || "Not provided",
           subject: `Website enquiry from ${name}${business ? ` (${business})` : ""}`,
           message: formData.get("message"),
         },
