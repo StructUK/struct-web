@@ -62,9 +62,9 @@ export default function Work() {
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
           <div className="eyebrow justify-center">Case Study</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-            One automation,
+            How this stuff
             <br />
-            <em className="text-green-light not-italic">start to finish.</em>
+            <em className="text-green-light not-italic">really works.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
             We&apos;re early - no client case studies live yet. So here&apos;s one we
@@ -105,7 +105,7 @@ export default function Work() {
           </Reveal>
 
           <Reveal>
-            <div className="overflow-hidden rounded-2xl border border-border bg-bg-2 p-3">
+            <div className="mx-auto max-w-[720px] overflow-hidden rounded-2xl border border-border bg-bg-2 p-3">
               <Image
                 src="/imgs/work/invoice-chaser-canvas.png"
                 alt="The Invoice Chaser workflow open in n8n, showing Read Invoices, Filter Overdue Invoices, Route by Tier, three Send Email branches, and three Log Chase steps"
