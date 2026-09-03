@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Lattice from "@/components/Lattice";
 import Reveal from "@/components/Reveal";
 import SectionSpine from "@/components/SectionSpine";
 import GlowBloom from "@/components/GlowBloom";
 import SectionDivider from "@/components/SectionDivider";
+import WorkflowDiagram from "@/components/WorkflowDiagram";
 
 export const metadata: Metadata = {
-  title: "Case Study",
+  title: "Explanation",
   description:
     "A real automation, built and walked through step by step: how Struct Solutions automated overdue-invoice chasing with n8n.",
   alternates: { canonical: "/work" },
@@ -60,15 +60,15 @@ export default function Work() {
       <section className="relative overflow-hidden pt-44 pb-24">
         <Lattice variant="page" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-          <div className="eyebrow justify-center">Case Study</div>
+          <div className="eyebrow justify-center">Explanation</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
             How this stuff
             <br />
             <em className="text-green-light not-italic">really works.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            We&apos;re early - no client case studies live yet. So here&apos;s one we
-            built ourselves: a real n8n workflow, walked through exactly as it works.
+            Here&apos;s exactly how one of our automations works, start to finish -
+            the same kind of build we do for the businesses we work with.
           </p>
         </div>
       </section>
@@ -100,19 +100,13 @@ export default function Work() {
           <Reveal className="mb-10 max-w-xl">
             <div className="eyebrow">The build</div>
             <h2 className="mt-4 text-3xl sm:text-[2.25rem]">
-              Invoice Chaser - the actual n8n canvas.
+              Invoice Chaser, laid out simply.
             </h2>
           </Reveal>
 
           <Reveal>
-            <div className="mx-auto max-w-[720px] overflow-hidden rounded-2xl border border-border bg-bg-2 p-3">
-              <Image
-                src="/imgs/work/invoice-chaser-canvas.png"
-                alt="The Invoice Chaser workflow open in n8n, showing Read Invoices, Filter Overdue Invoices, Route by Tier, three Send Email branches, and three Log Chase steps"
-                width={719}
-                height={319}
-                className="w-full rounded-lg"
-              />
+            <div className="rounded-2xl border border-border bg-bg-2 px-4 py-8 sm:px-8">
+              <WorkflowDiagram />
             </div>
           </Reveal>
 
