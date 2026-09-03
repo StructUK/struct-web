@@ -253,6 +253,32 @@ export default function Home() {
 
       <SectionDivider />
 
+      <section className="relative overflow-hidden py-28">
+        <GlowBloom className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size={480} />
+        <div className="relative mx-auto max-w-2xl px-6 text-center">
+          <Reveal>
+            <div className="eyebrow justify-center">Know your number</div>
+            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">
+              Most SMBs spend <em className="text-green-light not-italic">£8,000+</em> a
+              year on tasks a machine could handle.
+            </h2>
+            <p className="mx-auto mt-5 max-w-md text-text-secondary">
+              Plug in one task you do by hand and see what it&apos;s really costing you -
+              and how fast automating it pays for itself.
+            </p>
+            <Link
+              href="/calculator"
+              prefetch={false}
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
+            >
+              Calculate yours →
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <SectionDivider />
+
       <section className="relative py-28">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <Reveal>
