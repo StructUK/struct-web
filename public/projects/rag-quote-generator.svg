@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480" font-family="DM Sans, Arial, sans-serif">
+  <rect width="1400" height="480" fill="#0d0d0d"/>
+  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">RAG Quote &amp; Proposal Generator — workflow diagram</text>
+
+  <text x="30" y="80" fill="#3DBF3D" font-size="14" font-weight="700">1. LOAD PRICING KNOWLEDGE BASE (run once, manually)</text>
+  <line x1="30" y1="90" x2="1370" y2="90" stroke="#2A9D2A" stroke-width="1" opacity="0.4"/>
+  <g font-size="13" fill="#e8e8e8">
+    <rect x="30" y="110" width="150" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="105" y="135" text-anchor="middle" font-weight="600">Manual Trigger</text>
+    <text x="105" y="153" text-anchor="middle" font-size="11" fill="#9a9a9a">Load Pricing KB</text>
+
+    <rect x="230" y="110" width="170" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="315" y="135" text-anchor="middle" font-weight="600">Code</text>
+    <text x="315" y="153" text-anchor="middle" font-size="11" fill="#9a9a9a">services &amp; pricing text (8 docs)</text>
+
+    <rect x="450" y="40" width="170" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="535" y="65" text-anchor="middle" font-weight="600">Default Data Loader</text>
+    <text x="535" y="83" text-anchor="middle" font-size="11" fill="#9a9a9a">chunk each doc</text>
+
+    <rect x="450" y="180" width="170" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="535" y="205" text-anchor="middle" font-weight="600">Embeddings OpenAI</text>
+    <text x="535" y="223" text-anchor="middle" font-size="11" fill="#9a9a9a">text-embedding model</text>
+
+    <rect x="680" y="110" width="200" height="60" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="780" y="135" text-anchor="middle" font-weight="700" fill="#3DBF3D">In-Memory Vector Store</text>
+    <text x="780" y="153" text-anchor="middle" font-size="11" fill="#9a9a9a">mode: insert · key "pricing_kb"</text>
+  </g>
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M180,140 L230,140"/>
+    <path d="M400,140 L450,140 L450,70"/>
+    <path d="M400,140 L450,140 L450,210"/>
+    <path d="M620,70 L680,70 L680,120"/>
+    <path d="M620,210 L680,210 L680,160"/>
+  </g>
+
+  <text x="30" y="290" fill="#3DBF3D" font-size="14" font-weight="700">2. DRAFT &amp; SEND A QUOTE (every form submission)</text>
+  <line x1="30" y1="300" x2="1370" y2="300" stroke="#2A9D2A" stroke-width="1" opacity="0.4"/>
+  <g font-size="13" fill="#e8e8e8">
+    <rect x="30" y="330" width="150" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="105" y="355" text-anchor="middle" font-weight="600">Form Trigger</text>
+    <text x="105" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">Quote Request Form</text>
+
+    <rect x="220" y="330" width="150" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="295" y="355" text-anchor="middle" font-weight="600">Code</text>
+    <text x="295" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">Build Quote Prompt</text>
+
+    <rect x="410" y="330" width="160" height="60" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="490" y="355" text-anchor="middle" font-weight="700" fill="#3DBF3D">AI Agent</text>
+    <text x="490" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">Quote Drafting Agent</text>
+
+    <rect x="410" y="420" width="160" height="50" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="490" y="443" text-anchor="middle" font-weight="600" font-size="12">OpenAI Chat Model</text>
+    <text x="490" y="459" text-anchor="middle" font-size="10" fill="#9a9a9a">gpt-4o-mini</text>
+
+    <rect x="610" y="330" width="180" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="700" y="355" text-anchor="middle" font-weight="600">Vector Store QA Tool</text>
+    <text x="700" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">Find Relevant Pricing</text>
+
+    <rect x="830" y="330" width="190" height="60" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="925" y="355" text-anchor="middle" font-weight="700" fill="#3DBF3D">In-Memory Vector Store</text>
+    <text x="925" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">mode: retrieve · key "pricing_kb"</text>
+
+    <rect x="1050" y="330" width="150" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1125" y="355" text-anchor="middle" font-weight="600">Set</text>
+    <text x="1125" y="373" text-anchor="middle" font-size="11" fill="#9a9a9a">Prepare Quote Email</text>
+
+    <rect x="1230" y="290" width="150" height="50" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1305" y="313" text-anchor="middle" font-weight="600" font-size="12">Google Sheets</text>
+    <text x="1305" y="329" text-anchor="middle" font-size="10" fill="#9a9a9a">Log Quote Request</text>
+
+    <rect x="1230" y="360" width="150" height="50" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1305" y="383" text-anchor="middle" font-weight="600" font-size="12">Send Email</text>
+    <text x="1305" y="399" text-anchor="middle" font-size="10" fill="#9a9a9a">Send Quote Email</text>
+  </g>
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M180,360 L220,360"/>
+    <path d="M370,360 L410,360"/>
+    <path d="M490,420 L490,390"/>
+    <path d="M570,360 L610,360"/>
+    <path d="M790,360 L830,360"/>
+    <path d="M1020,360 L1050,360"/>
+    <path d="M1200,360 L1215,360 L1215,315 L1230,315"/>
+    <path d="M1215,315 L1215,385 L1230,385"/>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2A9D2A"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="465" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json — not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
+</svg>

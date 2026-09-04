@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480" font-family="DM Sans, Arial, sans-serif">
+  <rect width="1400" height="480" fill="#0d0d0d"/>
+  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">emailPlus — workflow diagram</text>
+
+  <text x="30" y="80" fill="#3DBF3D" font-size="14" font-weight="700">1. TRIAGE &amp; DRAFT (on new inbound enquiry)</text>
+  <line x1="30" y1="90" x2="1370" y2="90" stroke="#2A9D2A" stroke-width="1" opacity="0.4"/>
+  <g font-size="12" fill="#e8e8e8">
+    <rect x="30" y="110" width="140" height="60" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="100" y="134" text-anchor="middle" font-weight="700" fill="#3DBF3D">Enquiry Received</text>
+    <text x="100" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">IMAP Trigger</text>
+
+    <rect x="200" y="110" width="110" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="255" y="134" text-anchor="middle" font-weight="600">Config</text>
+    <text x="255" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">from / reviewer</text>
+
+    <rect x="340" y="110" width="150" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="415" y="134" text-anchor="middle" font-weight="600">Normalize Fields</text>
+    <text x="415" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">sender, subject, body</text>
+
+    <rect x="520" y="110" width="170" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="605" y="134" text-anchor="middle" font-weight="600">Skip Duplicate Emails</text>
+    <text x="605" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">Code · Message-ID check</text>
+
+    <rect x="720" y="110" width="190" height="60" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="815" y="134" text-anchor="middle" font-weight="700" fill="#3DBF3D">Classify &amp; Draft Reply</text>
+    <text x="815" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">Information Extractor</text>
+
+    <rect x="750" y="210" width="130" height="50" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="815" y="233" text-anchor="middle" font-weight="600" font-size="11">OpenAI Chat Model</text>
+    <text x="815" y="249" text-anchor="middle" font-size="9" fill="#9a9a9a">gpt-4o-mini</text>
+
+    <rect x="940" y="110" width="160" height="60" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1020" y="134" text-anchor="middle" font-weight="600">Consolidate Fields</text>
+    <text x="1020" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">flatten AI + enquiry data</text>
+
+    <rect x="1130" y="110" width="180" height="60" rx="8" fill="#161616" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="1220" y="134" text-anchor="middle" font-weight="600">Needs Human Review?</text>
+    <text x="1220" y="151" text-anchor="middle" font-size="10" fill="#9a9a9a">If · requiresReview</text>
+  </g>
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M170,140 L200,140"/>
+    <path d="M310,140 L340,140"/>
+    <path d="M490,140 L520,140"/>
+    <path d="M690,140 L720,140"/>
+    <path d="M815,210 L815,170"/>
+    <path d="M910,140 L940,140"/>
+    <path d="M1100,140 L1130,140"/>
+  </g>
+
+  <text x="30" y="290" fill="#3DBF3D" font-size="14" font-weight="700">2. ROUTE, NOTIFY &amp; LOG</text>
+  <line x1="30" y1="300" x2="1370" y2="300" stroke="#2A9D2A" stroke-width="1" opacity="0.4"/>
+  <g font-size="12" fill="#e8e8e8">
+    <rect x="30" y="325" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="115" y="349" text-anchor="middle" font-weight="600">Notify Reviewer</text>
+    <text x="115" y="366" text-anchor="middle" font-size="10" fill="#9a9a9a">Send Email (SMTP)</text>
+
+    <rect x="240" y="325" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="325" y="349" text-anchor="middle" font-weight="600">Prepare Row</text>
+    <text x="325" y="366" text-anchor="middle" font-size="10" fill="#9a9a9a">Set · Status: Escalated</text>
+
+    <rect x="450" y="325" width="190" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="545" y="349" text-anchor="middle" font-weight="600">Log to Sheet</text>
+    <text x="545" y="366" text-anchor="middle" font-size="10" fill="#9a9a9a">Google Sheets · Escalated</text>
+
+    <rect x="30" y="400" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="115" y="424" text-anchor="middle" font-weight="600">Send Reply</text>
+    <text x="115" y="441" text-anchor="middle" font-size="10" fill="#9a9a9a">Send Email (SMTP)</text>
+
+    <rect x="240" y="400" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="325" y="424" text-anchor="middle" font-weight="600">Prepare Row</text>
+    <text x="325" y="441" text-anchor="middle" font-size="10" fill="#9a9a9a">Set · Status: Auto-sent</text>
+
+    <rect x="450" y="400" width="190" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="545" y="424" text-anchor="middle" font-weight="600">Log to Sheet</text>
+    <text x="545" y="441" text-anchor="middle" font-size="10" fill="#9a9a9a">Google Sheets · Auto-sent</text>
+  </g>
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M1180,170 L1180,220 L115,220 L115,325"/>
+    <path d="M1260,170 L1260,240 L115,240 L115,400"/>
+    <path d="M200,352 L240,352"/>
+    <path d="M410,352 L450,352"/>
+    <path d="M200,427 L240,427"/>
+    <path d="M410,427 L450,427"/>
+  </g>
+  <text x="1010" y="205" fill="#9a9a9a" font-size="10">true → escalate</text>
+  <text x="1010" y="260" fill="#9a9a9a" font-size="10">false → auto-send</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2A9D2A"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="465" fill="#6a6a6a" font-size="11">Diagram derived from the workflow's documented architecture — not a live n8n canvas screenshot.</text>
+</svg>

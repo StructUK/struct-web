@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 220" font-family="DM Sans, Arial, sans-serif">
+  <rect width="1400" height="220" fill="#0d0d0d"/>
+  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">Monthly Report Generator — workflow diagram</text>
+
+  <g font-size="12" fill="#e8e8e8">
+    <rect x="30" y="70" width="170" height="55" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="115" y="93" text-anchor="middle" font-weight="700" fill="#3DBF3D">Schedule Trigger</text>
+    <text x="115" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">1st of month, 8am</text>
+
+    <rect x="230" y="70" width="160" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="310" y="93" text-anchor="middle" font-weight="600">Google Sheets</text>
+    <text x="310" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">Read Jobs Sheet</text>
+
+    <rect x="420" y="70" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="505" y="93" text-anchor="middle" font-weight="600">Code</text>
+    <text x="505" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">Aggregate Last Month</text>
+
+    <rect x="620" y="70" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="705" y="93" text-anchor="middle" font-weight="600">Code</text>
+    <text x="705" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">Format Report Body</text>
+
+    <rect x="820" y="70" width="160" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="900" y="93" text-anchor="middle" font-weight="600">Send Email</text>
+    <text x="900" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">to owner/client</text>
+
+    <rect x="1010" y="70" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1095" y="93" text-anchor="middle" font-weight="600">Google Sheets</text>
+    <text x="1095" y="110" text-anchor="middle" font-size="10" fill="#9a9a9a">Log Report Sent</text>
+  </g>
+
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M200,97 L230,97"/>
+    <path d="M390,97 L420,97"/>
+    <path d="M590,97 L620,97"/>
+    <path d="M790,97 L820,97"/>
+    <path d="M980,97 L1010,97"/>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2A9D2A"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="200" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json — not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
+</svg>

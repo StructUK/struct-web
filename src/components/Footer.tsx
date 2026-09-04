@@ -24,6 +24,9 @@ export default function Footer() {
           <Link href="/work" prefetch={false} className="text-sm text-text-secondary hover:text-text-primary">
             Explanation
           </Link>
+          <Link href="/projects" prefetch={false} className="text-sm text-text-secondary hover:text-text-primary">
+            Projects
+          </Link>
           <Link href="/about" prefetch={false} className="text-sm text-text-secondary hover:text-text-primary">
             About
           </Link>
