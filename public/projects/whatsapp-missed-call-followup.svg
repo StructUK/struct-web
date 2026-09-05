@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1950 300" font-family="DM Sans, Arial, sans-serif">
+  <rect width="1950" height="300" fill="#0d0d0d"/>
+  <text x="30" y="30" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="20" font-weight="700">Missed-Call WhatsApp Follow-up — workflow diagram</text>
+
+  <g font-size="12" fill="#e8e8e8">
+    <rect x="30" y="60" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="105" y="83" text-anchor="middle" font-weight="600">Webhook</text>
+    <text x="105" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Twilio Status Webhook</text>
+
+    <rect x="210" y="60" width="140" height="55" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="280" y="83" text-anchor="middle" font-weight="700" fill="#3DBF3D">Filter</text>
+    <text x="280" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Missed Calls only</text>
+
+    <rect x="380" y="60" width="130" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="445" y="83" text-anchor="middle" font-weight="600">Set</text>
+    <text x="445" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Config Values</text>
+
+    <rect x="540" y="60" width="170" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="625" y="83" text-anchor="middle" font-weight="600">Set</text>
+    <text x="625" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Format Number &amp; Timestamp</text>
+
+    <rect x="740" y="60" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="815" y="83" text-anchor="middle" font-weight="600">Google Sheets</text>
+    <text x="815" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Lookup Number in Log</text>
+
+    <rect x="920" y="60" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="995" y="83" text-anchor="middle" font-weight="600">Code</text>
+    <text x="995" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Check Dedupe Window</text>
+
+    <rect x="1100" y="60" width="110" height="55" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="1155" y="83" text-anchor="middle" font-weight="700" fill="#3DBF3D">If</text>
+    <text x="1155" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Duplicate?</text>
+
+    <rect x="1240" y="60" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1315" y="83" text-anchor="middle" font-weight="600">HTTP Request</text>
+    <text x="1315" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Send WhatsApp Template</text>
+
+    <rect x="1420" y="60" width="120" height="55" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
+    <text x="1480" y="83" text-anchor="middle" font-weight="700" fill="#3DBF3D">If</text>
+    <text x="1480" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Send Failed?</text>
+
+    <rect x="1570" y="60" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1645" y="83" text-anchor="middle" font-weight="600">Set</text>
+    <text x="1645" y="100" text-anchor="middle" font-size="10" fill="#9a9a9a">Build Success Log Row</text>
+
+    <!-- branch row (skip / failure) -->
+    <rect x="1100" y="200" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1175" y="223" text-anchor="middle" font-weight="600">Set</text>
+    <text x="1175" y="240" text-anchor="middle" font-size="10" fill="#9a9a9a">Build Skip Log Row</text>
+
+    <rect x="1420" y="200" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1495" y="223" text-anchor="middle" font-weight="600">Set</text>
+    <text x="1495" y="240" text-anchor="middle" font-size="10" fill="#9a9a9a">Build Failure Log Row</text>
+
+    <!-- converge -->
+    <rect x="1770" y="130" width="150" height="55" rx="8" fill="#161616" stroke="#2A9D2A" stroke-width="1.5"/>
+    <text x="1845" y="153" text-anchor="middle" font-weight="600">Google Sheets</text>
+    <text x="1845" y="170" text-anchor="middle" font-size="10" fill="#9a9a9a">Append Row to Log</text>
+  </g>
+
+  <g stroke="#2A9D2A" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M180,87 L210,87"/>
+    <path d="M350,87 L380,87"/>
+    <path d="M510,87 L540,87"/>
+    <path d="M710,87 L740,87"/>
+    <path d="M890,87 L920,87"/>
+    <path d="M1070,87 L1100,87"/>
+    <path d="M1210,87 L1240,87"/>
+    <path d="M1390,87 L1420,87"/>
+    <path d="M1540,87 L1570,87"/>
+    <path d="M1155,115 L1175,200"/>
+    <path d="M1480,115 L1495,200"/>
+    <path d="M1720,87 L1770,150"/>
+    <path d="M1250,227 L1770,157" stroke-dasharray="2,3"/>
+    <path d="M1570,227 L1770,163" stroke-dasharray="2,3"/>
+  </g>
+
+  <g font-size="10" fill="#6a6a6a">
+    <text x="1160" y="150" text-anchor="middle">duplicate</text>
+    <text x="1485" y="150" text-anchor="middle">failed</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2A9D2A"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="280" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json — not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
+</svg>

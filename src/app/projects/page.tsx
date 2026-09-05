@@ -12,6 +12,13 @@ export const metadata: Metadata = {
 
 const PROJECTS = [
   {
+    name: "Missed-Call WhatsApp Follow-up",
+    tag: "n8n · WhatsApp",
+    desc: "The moment a call goes unanswered, the caller gets an instant WhatsApp message so the lead isn't lost - with duplicate protection and a searchable log of every missed call.",
+    repoUrl: "https://github.com/StructUK/n8n-missed-call-whatsapp-followup",
+    diagramSrc: "/projects/whatsapp-missed-call-followup.svg",
+  },
+  {
     name: "RAG Quote Generator",
     tag: "n8n · RAG",
     desc: "Drafts itemised job quotes grounded in your own pricing knowledge base, so estimates stay consistent no matter who's asking.",
@@ -24,6 +31,13 @@ const PROJECTS = [
     desc: "Reads inbound enquiries, drafts a reply with AI, auto-sends the routine ones and hands anything sensitive to a human first.",
     repoUrl: "https://github.com/StructUK/emailPlus",
     diagramSrc: "/projects/email-plus.svg",
+  },
+  {
+    name: "WhatsApp AI Support Chatbot",
+    tag: "n8n · WhatsApp",
+    desc: "Picks up the conversation the moment a lead replies - answering from your own FAQ and pricing docs, remembering the thread, and handing off to a human by email, Slack and SMS when it's out of its depth.",
+    repoUrl: "https://github.com/StructUK/n8n-whatsapp-support-chatbot",
+    diagramSrc: "/projects/whatsapp-support-chatbot.svg",
   },
   {
     name: "Video Cross-Posting Framework",
