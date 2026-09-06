@@ -51,7 +51,7 @@ const STATS = [
   { value: "0", label: "Manual emails sent" },
   { value: "3", label: "Escalation tiers" },
   { value: "2 hrs", label: "Time to build" },
-  { value: "£250", label: "Typical build cost" },
+  { value: "£800", label: "Typical build cost" },
 ];
 
 export default function Work() {

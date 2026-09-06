@@ -285,8 +285,8 @@ export default function Home() {
             <div className="eyebrow justify-center">Pricing</div>
             <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Straightforward pricing.</h2>
             <p className="mx-auto mt-4 max-w-lg text-text-secondary">
-              Most automation setups start from £250 per workflow. Website hosting from
-              £20/month. We quote per project and keep it simple.
+              Automation starts from £350, tiered by how complex the build is. Website
+              hosting from £20/month. We quote per project and keep it simple.
             </p>
             <Link
               href="/services"
