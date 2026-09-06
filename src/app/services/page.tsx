@@ -36,13 +36,70 @@ const HOSTING_ICON: IconShape = {
 
 const EMAIL_ICON: IconShape = { rect: true, path: "m3 7 9 6 9-6" };
 
-const AUTOMATION_EXAMPLES = [
-  "Enquiry auto-reply and lead logging - respond immediately, log every contact automatically",
-  "Invoice chasing sequences - reminders sent at 7, 14, and 30 days without you lifting a finger",
-  "Booking confirmations and reminders - automatic emails triggered when a booking is made",
-  "Review request sequences - ask for a Google or Trustpilot review days after a job is done",
-  "Monthly report generation - pull data, format it, email it - no manual work",
-  "CRM updates from form submissions - every lead captured and logged without copy-pasting",
+const CARE_ICON: IconShape = {
+  path: "M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z",
+  circle: { cx: 12, cy: 12, r: 2.5 },
+};
+
+const BUNDLE_ICON: IconShape = {
+  circles: [
+    { cx: 9, cy: 12, r: 4.5 },
+    { cx: 15, cy: 12, r: 4.5 },
+  ],
+};
+
+const AUTOMATION_TIERS = [
+  {
+    tag: "Single workflow",
+    name: "Starter",
+    price: "£200–280",
+    desc: "One trigger, no branching, 1–2 integrations. No AI.",
+    examples: [
+      "Lead notification to Slack + spreadsheet",
+      "New enquiry logged straight into your CRM",
+      "Form submission triggers a team alert",
+    ],
+  },
+  {
+    tag: "Proven template",
+    name: "Playbook",
+    price: "£200–280",
+    desc: "A tested, repeatable build we've already delivered before - fast because we've built it, not because it's lower quality.",
+    examples: [
+      "Invoice chasing sequences (7/14/30-day)",
+      "Booking confirmations and reminders",
+      "Review request sequences",
+      "Monthly report generation",
+    ],
+  },
+  {
+    tag: "Custom process",
+    name: "Bespoke Standard",
+    price: "£400–550",
+    desc: "Multi-step logic with conditional branching, 2–3 integrations - for a process that doesn't match an existing Playbook.",
+    examples: [
+      "Multi-branch quote logic based on job type and location",
+      "Cross-system data sync unique to how you run reporting",
+      "Conditional escalation paths for different client types",
+    ],
+  },
+  {
+    tag: "AI-powered",
+    name: "Complex / AI Agent",
+    price: "From £900",
+    desc: "RAG pipeline or AI agent reasoning, tool use, memory, approval steps.",
+    examples: [
+      "AI chatbot that answers from your docs and pricing",
+      "Automated quote generation with a human approval step",
+      "Multi-tool agent handling enquiries end-to-end",
+    ],
+  },
+];
+
+const CARE_PLAN_INCLUDED = [
+  "Monitoring for automation failures",
+  "Fixes when a connected API or tool changes behaviour",
+  "A set number of hours each month for small tweaks",
 ];
 
 const HOSTING_INCLUDED = [
@@ -68,7 +125,11 @@ const FAQS = [
   },
   {
     q: "What if something breaks?",
-    a: "All setups include a testing period and initial support. If something breaks after that, you can contact us and we'll sort it - or ask about an ongoing support arrangement if you'd rather things were monitored proactively.",
+    a: "All setups include a testing period and initial support. If something breaks after that, you can contact us and we'll sort it - or take out a Care Plan if you'd rather things were monitored proactively.",
+  },
+  {
+    q: "Where's my data hosted, and who can see it?",
+    a: "Everything runs on EU-based infrastructure. Only the person building and maintaining your automation has access to your n8n instance and credentials - it's never shared beyond that. If you offboard, we hand over or delete your workflows and credentials at your instruction - your data doesn't sit on our systems afterwards.",
   },
 ];
 
@@ -89,9 +150,9 @@ export default function Services() {
 
       <section className="relative py-16">
         <SectionSpine side="left" branch="out" />
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
-            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal className="relative max-w-2xl">
+            <span className="absolute top-0 right-0 hidden rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light sm:inline-block">
               Core service
             </span>
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
@@ -116,11 +177,79 @@ export default function Services() {
                 and hundreds more. No ripping out your current setup.
               </p>
             </div>
+            <p className="mt-5 text-sm font-medium text-green-light">
+              Agency-quality builds, priced below what UK agencies charge for the same
+              thing.
+            </p>
+          </Reveal>
+          <Reveal className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {AUTOMATION_TIERS.map((t) => (
+              <div
+                key={t.name}
+                className="card-hover relative rounded-2xl border border-border bg-bg-2 p-7"
+              >
+                <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+                  {t.tag}
+                </span>
+                <h3 className="mt-2 text-xl">{t.name}</h3>
+                <p className="mt-1 text-lg text-text-primary">{t.price}</p>
+                <p className="mt-3 text-sm text-text-secondary">{t.desc}</p>
+                <p className="mt-5 text-xs font-medium uppercase tracking-wider text-text-muted">
+                  Examples
+                </p>
+                <div className="mt-3 flex flex-col gap-2">
+                  {t.examples.map((e) => (
+                    <div key={e} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
+                      <span className="text-sm text-text-secondary">{e}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </Reveal>
+          <Reveal className="mt-6 rounded-2xl border border-border bg-bg-2 p-6 text-sm text-text-secondary">
+            <span className="text-text-primary">A note on Complex / AI Agent builds:</span>{" "}
+            AI-agent builds that use OpenAI or Anthropic&apos;s models carry ongoing API
+            usage costs on top of the build fee - this scales with how much the
+            automation is actually used. In most cases you&apos;ll hold your own API key
+            so usage is billed directly to you at cost, with full visibility. We&apos;ll
+            always tell you the expected running cost before you commit.
+          </Reveal>
+          <p className="mt-4 text-xs text-text-muted">
+            Two rounds of revisions are included in every fixed price - further changes
+            are quoted separately.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              Optional
+            </span>
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={CARE_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Care Plan
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              If you&apos;d rather we kept an eye on it
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                Not required - your automation keeps working without it, and this
+                doesn&apos;t change our no-long-contracts promise. No forced ongoing
+                payment, cancel any time.
+              </p>
+            </div>
             <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
-              Examples of what we build
+              What&apos;s included
             </p>
             <div className="mt-3 flex flex-col gap-2">
-              {AUTOMATION_EXAMPLES.map((e) => (
+              {CARE_PLAN_INCLUDED.map((e) => (
                 <div key={e} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
                   <span className="text-sm text-text-secondary">{e}</span>
@@ -128,9 +257,8 @@ export default function Services() {
               ))}
             </div>
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £250 per workflow.</span> Most
-              projects are quoted as a fixed package - we scope it on the call, quote
-              before we start.
+              <span className="text-text-primary">£150–400/month.</span> Scoped to how
+              many automations you have and how much monitoring you want.
             </div>
           </Reveal>
         </div>
@@ -159,6 +287,14 @@ export default function Services() {
               <p>
                 No shared hosting, no mystery downtimes, no &quot;contact your hosting
                 provider&quot; when something breaks. We are the hosting provider.
+              </p>
+              <p>
+                £20/month covers hosting, Cloudflare protection, SSL, daily backups,
+                uptime monitoring - and a person who fixes it, not a ticket queue. A
+                generic host with the same technical spec runs a similar price, but
+                you&apos;re on your own when something breaks; a separate website
+                maintenance service on top of that typically costs £25-100/month by
+                itself.
               </p>
             </div>
             <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
@@ -204,11 +340,46 @@ export default function Services() {
                 Want email automation on top? We can build that in. Your enquiry form
                 auto-responds. Your invoices chase themselves.
               </p>
+              <p>
+                A small team on Google Workspace pays close to this much in licence fees
+                alone, before anyone configures your domain&apos;s email authentication
+                (SPF, DKIM, DMARC) correctly - which is where most DIY setups quietly
+                fail and end up in spam folders.
+              </p>
             </div>
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £15/month per domain.</span>{" "}
+              <span className="text-text-primary">From £18/month per domain.</span>{" "}
               Includes setup, DNS configuration, and ongoing management. No per-user
               fees.
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-green-light/30 bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              Bundle
+            </span>
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={BUNDLE_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Domain Essentials
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              Hosting and email, bundled
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                Get your website hosting and professional email running together as one
+                package - one invoice, one point of contact.
+              </p>
+            </div>
+            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
+              <span className="text-text-primary">£34/month combined.</span> That&apos;s
+              £4/month less than buying hosting (£20) and email (£18) separately.
             </div>
           </Reveal>
         </div>
