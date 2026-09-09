@@ -15,16 +15,28 @@ export const metadata: Metadata = {
 
 const VALUES = [
   {
-    title: "We say what we'll do and do what we say",
-    desc: "No vague timelines. We scope projects properly, quote before we start, and deliver what we agreed.",
+    title: "Problem first, technology second",
+    desc: "We work out what's actually wrong before we talk about what to build. Technology only enters once we understand the problem.",
+  },
+  {
+    title: "We diagnose before we build",
+    desc: "No jumping straight to a tool. We understand what's really happening in the business before we design anything.",
+  },
+  {
+    title: "We use the simplest effective system",
+    desc: "The cleverest answer isn't the best one if a simpler system solves the same problem. We build what the problem needs, nothing more.",
+  },
+  {
+    title: "We build for the real business",
+    desc: "The one you actually run today, with its actual tools and actual people, not a hypothetical bigger version of it.",
   },
   {
     title: "We explain what we've built",
     desc: "You'll always know what your system does, how it works, and what to tell us if something changes.",
   },
   {
-    title: "We price on value, not hours",
-    desc: "Fixed quotes, no day rates. The price reflects what the system is worth to you, not how long it took us.",
+    title: "We own the result",
+    desc: "We don't hand over a system and disappear. If it's not working the way it should, that's on us to fix.",
   },
 ];
 
@@ -81,10 +93,10 @@ export default function About() {
         <SectionSpine side="right" branch="in" />
         <div className="mx-auto max-w-6xl px-6">
           <Reveal className="mb-14 text-center">
-            <div className="eyebrow justify-center">How we work</div>
-            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Three principles.</h2>
+            <div className="eyebrow justify-center">How we think</div>
+            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">The philosophy behind the work.</h2>
           </Reveal>
-          <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {VALUES.map((v) => (
               <div key={v.title} className="card-hover rounded-2xl border border-border bg-bg-2 p-8">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full border border-green-light/40 text-green-light">

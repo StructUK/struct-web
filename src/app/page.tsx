@@ -100,10 +100,11 @@ const STEPS = [
 const BUSINESS_TYPES = [
   "Trades and contractors",
   "Professional services (solicitors, accountants, consultants)",
-  "Health and wellness practitioners",
+  "Health, wellness and fitness businesses",
+  "Golf clubs and membership organisations",
   "Estate agents and letting agencies",
   "E-commerce and product businesses",
-  "Any small business taking enquiries online",
+  "Any small business taking enquiries or bookings online",
 ];
 
 const PROBLEM_EXAMPLES = [

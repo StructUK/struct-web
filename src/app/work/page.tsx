@@ -8,9 +8,9 @@ import SectionDivider from "@/components/SectionDivider";
 import WorkflowDiagram from "@/components/WorkflowDiagram";
 
 export const metadata: Metadata = {
-  title: "Explanation",
+  title: "Example",
   description:
-    "A real automation, built and walked through step by step: how Struct Solutions automated overdue-invoice chasing with n8n.",
+    "A real system, built and walked through step by step: how Struct Solutions fixed overdue-invoice chasing for a client.",
   alternates: { canonical: "/work" },
 };
 
@@ -60,7 +60,7 @@ export default function Work() {
       <section className="relative overflow-hidden pt-44 pb-24">
         <Lattice variant="page" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-          <div className="eyebrow justify-center">Explanation</div>
+          <div className="eyebrow justify-center">Example</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
             How this stuff
             <br />

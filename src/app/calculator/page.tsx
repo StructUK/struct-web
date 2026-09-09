@@ -3,9 +3,9 @@ import Lattice from "@/components/Lattice";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "ROI Calculator",
+  title: "Cost Calculator",
   description:
-    "See what a manual task is actually costing your business each year, and how fast an automation pays for itself.",
+    "See what a manual task is actually costing your business each year, and how fast the right system pays for itself.",
   alternates: { canonical: "/calculator" },
 };
 
@@ -14,7 +14,7 @@ export default function Calculator() {
     <section className="relative overflow-hidden pt-44 pb-24">
       <Lattice variant="page" />
       <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-        <div className="eyebrow justify-center">ROI Calculator</div>
+        <div className="eyebrow justify-center">Cost Calculator</div>
         <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
           What&apos;s the manual way actually costing you?
         </h1>

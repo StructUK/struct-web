@@ -34,8 +34,6 @@ const HOSTING_ICON: IconShape = {
   ],
 };
 
-const EMAIL_ICON: IconShape = { rect: true, path: "m3 7 9 6 9-6" };
-
 const CARE_ICON: IconShape = {
   path: "M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z",
   circle: { cx: 12, cy: 12, r: 2.5 },
@@ -50,25 +48,10 @@ const INTELLIGENT_ICON: IconShape = {
   path: "M8 9 12 17M16 9 12 17M8 9 16 9",
 };
 
-const BUNDLE_ICON: IconShape = {
-  circles: [
-    { cx: 9, cy: 12, r: 4.5 },
-    { cx: 15, cy: 12, r: 4.5 },
-  ],
-};
-
 const CARE_PLAN_INCLUDED = [
   "Monitoring for system failures",
   "Fixes when a connected API or tool changes behaviour",
   "A set number of hours each month for small tweaks",
-];
-
-const HOSTING_INCLUDED = [
-  "EU-based VPS hosting with 99.9% uptime",
-  "Cloudflare CDN and DDoS protection on every domain",
-  "Automatic SSL certificates - always HTTPS",
-  "Daily backups",
-  "Uptime monitoring with instant alerts",
 ];
 
 const FAQS = [
@@ -79,6 +62,10 @@ const FAQS = [
   {
     q: "Do you just build websites?",
     a: "No. A website might be part of the system we build, but the goal is always the underlying problem: a website on its own rarely fixes lost enquiries or scattered customer data. We look at the whole picture.",
+  },
+  {
+    q: "Can I just buy hosting or email from you on their own?",
+    a: "Not as a standalone product, no. We're not a hosting company. If hosting or email is part of the system we've built for you, we set it up properly and manage it as part of that system, not as a separate bill with no system behind it.",
   },
   {
     q: "How quickly can you get something live?",
@@ -133,6 +120,13 @@ export default function Services() {
                 competes.
               </p>
               <p>
+                When hosting or email is part of what we build, we set it up properly
+                (EU-based infrastructure, Cloudflare protection, the DNS records that
+                keep your email out of spam) and manage it as part of your system. We
+                don&apos;t sell a mailbox or a hosting plan on its own with nothing
+                behind it, that&apos;s not a system, it&apos;s just a bill.
+              </p>
+              <p>
                 We design the right foundation for what you need, then connect it to
                 the rest of the business rather than leaving it as an island.
               </p>
@@ -163,16 +157,13 @@ export default function Services() {
                 of the business and remove the friction between them.
               </p>
               <p>
-                We use n8n as our core automation tool where automation is the right
-                answer, connected to whatever software you&apos;re already using: Gmail,
-                Outlook, Google Sheets, Notion, Xero, and hundreds more.
+                Where automation is the right answer, we often build it in n8n,
+                connected to whatever software you&apos;re already using: Gmail,
+                Outlook, Google Sheets, Notion, Xero, and hundreds more. The tool is
+                whatever gets the job done properly, not the point of the exercise.
               </p>
             </div>
           </Reveal>
-          <p className="mt-4 text-xs text-text-muted">
-            Two rounds of revisions are included in every fixed-price system, further
-            changes are quoted separately.
-          </p>
         </div>
       </section>
 
@@ -207,6 +198,10 @@ export default function Services() {
               </p>
             </div>
           </Reveal>
+          <p className="mt-4 text-xs text-text-muted">
+            Two rounds of revisions are included in every fixed-price system, further
+            changes are quoted separately.
+          </p>
         </div>
       </section>
 
@@ -246,127 +241,6 @@ export default function Services() {
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
               <span className="text-text-primary">From £100/month.</span> Scoped to how
               many systems you have and how much monitoring you want.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative py-8">
-        <SectionSpine side="right" branch="in" />
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
-              <ServiceIcon shape={HOSTING_ICON} />
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              Website Hosting &amp; Management
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              Fast, secure hosting you don&apos;t have to think about
-            </h2>
-            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
-              <p>
-                We host websites on enterprise-grade European infrastructure with
-                Cloudflare protecting every domain. You get fast load times, automatic
-                HTTPS, and us as the single point of contact when anything needs
-                changing.
-              </p>
-              <p>
-                No shared hosting, no mystery downtimes, no &quot;contact your hosting
-                provider&quot; when something breaks. We are the hosting provider.
-              </p>
-              <p>
-                £20/month covers hosting, Cloudflare protection, SSL, daily backups,
-                uptime monitoring - and a person who fixes it, not a ticket queue. A
-                generic host with the same technical spec runs a similar price, but
-                you&apos;re on your own when something breaks; a separate website
-                maintenance service on top of that typically costs £25-100/month by
-                itself.
-              </p>
-            </div>
-            <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
-              What&apos;s included
-            </p>
-            <div className="mt-3 flex flex-col gap-2">
-              {HOSTING_INCLUDED.map((e) => (
-                <div key={e} className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
-                  <span className="text-sm text-text-secondary">{e}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £20/month per site.</span>{" "}
-              Includes monitoring, backups, and SSL. Ask about migration from your
-              current host.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative py-8">
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
-              <ServiceIcon shape={EMAIL_ICON} />
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              Email Hosting &amp; Setup
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              Professional email that actually gets delivered
-            </h2>
-            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
-              <p>
-                We set up and manage professional email addresses on your domain - with
-                the proper DNS records (SPF, DKIM, DMARC) that stop your emails going to
-                spam. Something most businesses never think about until it&apos;s too
-                late.
-              </p>
-              <p>
-                Want automation on top? We can build that in. Your enquiry form
-                auto-responds. Your invoices chase themselves.
-              </p>
-              <p>
-                A small team on Google Workspace pays close to this much in licence fees
-                alone, before anyone configures your domain&apos;s email authentication
-                (SPF, DKIM, DMARC) correctly - which is where most DIY setups quietly
-                fail and end up in spam folders.
-              </p>
-            </div>
-            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £18/month per domain.</span>{" "}
-              Includes setup, DNS configuration, and ongoing management. No per-user
-              fees.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative py-8">
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-green-light/30 bg-bg-2 p-8 sm:p-10">
-            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
-              Bundle
-            </span>
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
-              <ServiceIcon shape={BUNDLE_ICON} />
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              Domain Essentials
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              Hosting and email, bundled
-            </h2>
-            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
-              <p>
-                Get your website hosting and professional email running together as one
-                package - one invoice, one point of contact.
-              </p>
-            </div>
-            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">£34/month combined.</span> That&apos;s
-              £4/month less than buying hosting (£20) and email (£18) separately.
             </div>
           </Reveal>
         </div>

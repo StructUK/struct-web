@@ -6,49 +6,49 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Open-source n8n automations built by Struct Solutions - real workflow templates for quoting, inbox triage, reporting, and content distribution.",
+    "Open-source systems built by Struct Solutions: real templates for lead recovery, quoting, inbox handling, customer support and reporting.",
   alternates: { canonical: "/projects" },
 };
 
 const PROJECTS = [
   {
     name: "Missed-Call WhatsApp Follow-up",
-    tag: "n8n · WhatsApp",
+    tag: "Lead Recovery",
     desc: "The moment a call goes unanswered, the caller gets an instant WhatsApp message so the lead isn't lost - with duplicate protection and a searchable log of every missed call.",
     repoUrl: "https://github.com/StructUK/n8n-missed-call-whatsapp-followup",
     diagramSrc: "/projects/whatsapp-missed-call-followup.svg",
   },
   {
     name: "RAG Quote Generator",
-    tag: "n8n · RAG",
+    tag: "Quoting System",
     desc: "Drafts itemised job quotes grounded in your own pricing knowledge base, so estimates stay consistent no matter who's asking.",
     repoUrl: "https://github.com/StructUK/n8n-rag-quote-generator",
     diagramSrc: "/projects/rag-quote-generator.svg",
   },
   {
     name: "emailPlus",
-    tag: "n8n · Inbox AI",
+    tag: "Inbox Handling",
     desc: "Reads inbound enquiries, drafts a reply with AI, auto-sends the routine ones and hands anything sensitive to a human first.",
     repoUrl: "https://github.com/StructUK/emailPlus",
     diagramSrc: "/projects/email-plus.svg",
   },
   {
     name: "WhatsApp AI Support Chatbot",
-    tag: "n8n · WhatsApp",
+    tag: "Customer Support",
     desc: "Picks up the conversation the moment a lead replies - answering from your own FAQ and pricing docs, remembering the thread, and handing off to a human by email, Slack and SMS when it's out of its depth.",
     repoUrl: "https://github.com/StructUK/n8n-whatsapp-support-chatbot",
     diagramSrc: "/projects/whatsapp-support-chatbot.svg",
   },
   {
     name: "Video Cross-Posting Framework",
-    tag: "n8n · Social",
+    tag: "Content Distribution",
     desc: "Publishes one finished video across TikTok, Instagram, YouTube, Facebook, LinkedIn, Pinterest and X through a swappable adapter.",
     repoUrl: "https://github.com/StructUK/n8n-video-cross-posting-framework",
     diagramSrc: "/projects/video-cross-posting.svg",
   },
   {
     name: "Monthly Report Generator",
-    tag: "n8n · Reporting",
+    tag: "Reporting",
     desc: "Summarises last month's revenue and jobs from a spreadsheet and emails the report on schedule, with zero manual pulling.",
     repoUrl: "https://github.com/StructUK/n8n-monthly-report-generator",
     diagramSrc: "/projects/monthly-report-generator.svg",
@@ -63,7 +63,7 @@ export default function Projects() {
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
           <div className="eyebrow justify-center">Projects</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-            Automations we&apos;ve
+            Systems we&apos;ve
             <br />
             <em className="text-green-light not-italic">open-sourced.</em>
           </h1>
