@@ -74,7 +74,7 @@ export default function Nav() {
             prefetch={false}
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-green px-5 py-2.5 text-sm font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
           >
-            Book a free call
+            Talk about a problem
           </Link>
           <button
             aria-label="Toggle menu"
@@ -120,7 +120,7 @@ export default function Nav() {
             prefetch={false}
             className="mx-6 my-4 flex justify-center rounded-full bg-green px-5 py-3 font-medium text-white"
           >
-            Book a free call
+            Talk about a problem
           </Link>
         </div>
       )}

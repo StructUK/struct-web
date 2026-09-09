@@ -67,8 +67,8 @@ export default function Work() {
             <em className="text-green-light not-italic">really works.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            Here&apos;s exactly how one of our automations works, start to finish -
-            the same kind of build we do for the businesses we work with.
+            Here&apos;s exactly how one of our systems works, start to finish, the
+            same kind of build we do for the businesses we work with.
           </p>
         </div>
       </section>
@@ -180,7 +180,7 @@ export default function Work() {
               prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Book a free call →
+              Talk about a problem →
             </Link>
           </Reveal>
         </div>

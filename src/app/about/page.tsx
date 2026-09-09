@@ -9,7 +9,7 @@ import SectionDivider from "@/components/SectionDivider";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Struct Solutions is a lean AI automation consultancy for UK small businesses - no account managers, no handoffs, just automation that works.",
+    "Struct Solutions is a lean business systems company for UK small businesses: we find the problems in how a business operates and build the systems to fix them.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,11 +20,11 @@ const VALUES = [
   },
   {
     title: "We explain what we've built",
-    desc: "You'll always know what your automation does, how it works, and what to tell us if something changes.",
+    desc: "You'll always know what your system does, how it works, and what to tell us if something changes.",
   },
   {
     title: "We price on value, not hours",
-    desc: "Fixed quotes, no day rates. The price reflects what it's worth to you, not how long it took us.",
+    desc: "Fixed quotes, no day rates. The price reflects what the system is worth to you, not how long it took us.",
   },
 ];
 
@@ -41,8 +41,8 @@ export default function About() {
             <em className="text-green-light not-italic">work smarter.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            No fluff. No layers. Just someone who knows what they&apos;re doing and gets
-            it done.
+            No fluff. No layers. Just someone who understands how a business runs and
+            builds the systems to fix what isn&apos;t working.
           </p>
         </div>
       </section>
@@ -52,22 +52,24 @@ export default function About() {
         <div className="mx-auto max-w-[760px] px-6">
           <Reveal className="flex flex-col gap-5 text-text-secondary">
             <p>
-              Struct Solutions was built around a simple frustration: too many small
-              businesses are drowning in admin that a machine could handle. Chasing the
-              same invoice. Replying to the same type of enquiry. Copying data from one
-              place to another. Work that takes time and attention but creates no actual
-              value.
+              Struct Solutions exists to help businesses solve problems created by
+              inefficient processes, disconnected systems, repetitive manual work, poor
+              digital foundations and information that&apos;s scattered across
+              spreadsheets, inboxes and someone&apos;s memory.
             </p>
             <p>
-              We&apos;re a lean, specialist consultancy - which means no account
-              managers, no handoffs, and no one to translate what you want into something
-              a developer will actually build. You work directly with the person doing
-              the work.
+              We look at how a business actually works, find where time, money,
+              opportunities or accuracy are being lost, and design a practical system to
+              fix it. The system could be a website, a CRM, an integration, a piece of
+              automation, an internal tool, or AI, whichever combination actually solves
+              the problem. The technology isn&apos;t the product. The solved problem is.
             </p>
             <p>
-              We focus on AI automation as a core service, with hosting and email
-              management for clients who want everything in one place. Most clients see
-              their first automation running within a week of the initial call.
+              We&apos;re a lean, specialist company, which means no account managers, no
+              handoffs, and no one translating what you want into something a developer
+              will actually build. You work directly with the person doing the work.
+              Most clients see their first piece of the system running within a week or
+              two of the initial call.
             </p>
           </Reveal>
         </div>
@@ -109,7 +111,7 @@ export default function About() {
               prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Book a free call
+              Talk about a problem
             </Link>
           </Reveal>
         </div>

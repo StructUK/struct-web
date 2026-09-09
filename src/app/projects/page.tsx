@@ -68,9 +68,8 @@ export default function Projects() {
             <em className="text-green-light not-italic">open-sourced.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            A few of the n8n workflows behind our own automation builds - real
-            templates, not slideware, published on GitHub for anyone to inspect
-            or adapt.
+            A few of the systems behind our own builds, real templates, not
+            slideware, published on GitHub for anyone to inspect or adapt.
           </p>
         </div>
       </section>
@@ -123,7 +122,7 @@ export default function Projects() {
               prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Book a free call →
+              Talk about a problem →
             </Link>
           </Reveal>
         </div>

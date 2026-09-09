@@ -10,7 +10,7 @@ import ServiceIcon, { type IconShape } from "@/components/ServiceIcon";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI workflow automation, website hosting, email hosting, and ongoing support - everything a growing business needs to stop doing admin manually.",
+    "Digital foundations, business systems and intelligent systems: what Struct Solutions builds to fix the problems slowing a business down.",
   alternates: { canonical: "/services" },
 };
 
@@ -41,6 +41,15 @@ const CARE_ICON: IconShape = {
   circle: { cx: 12, cy: 12, r: 2.5 },
 };
 
+const INTELLIGENT_ICON: IconShape = {
+  circles: [
+    { cx: 8, cy: 9, r: 2 },
+    { cx: 16, cy: 9, r: 2 },
+    { cx: 12, cy: 17, r: 2 },
+  ],
+  path: "M8 9 12 17M16 9 12 17M8 9 16 9",
+};
+
 const BUNDLE_ICON: IconShape = {
   circles: [
     { cx: 9, cy: 12, r: 4.5 },
@@ -48,56 +57,8 @@ const BUNDLE_ICON: IconShape = {
   ],
 };
 
-const AUTOMATION_TIERS = [
-  {
-    tag: "Single workflow",
-    name: "Starter",
-    price: "£200–280",
-    desc: "One trigger, no branching, 1–2 integrations. No AI.",
-    examples: [
-      "Lead notification to Slack + spreadsheet",
-      "New enquiry logged straight into your CRM",
-      "Form submission triggers a team alert",
-    ],
-  },
-  {
-    tag: "Proven template",
-    name: "Playbook",
-    price: "£200–280",
-    desc: "A tested, repeatable build we've already delivered before - fast because we've built it, not because it's lower quality.",
-    examples: [
-      "Invoice chasing sequences (7/14/30-day)",
-      "Booking confirmations and reminders",
-      "Review request sequences",
-      "Monthly report generation",
-    ],
-  },
-  {
-    tag: "Custom process",
-    name: "Bespoke Standard",
-    price: "£400–550",
-    desc: "Multi-step logic with conditional branching, 2–3 integrations - for a process that doesn't match an existing Playbook.",
-    examples: [
-      "Multi-branch quote logic based on job type and location",
-      "Cross-system data sync unique to how you run reporting",
-      "Conditional escalation paths for different client types",
-    ],
-  },
-  {
-    tag: "AI-powered",
-    name: "Complex / AI Agent",
-    price: "From £900",
-    desc: "RAG pipeline or AI agent reasoning, tool use, memory, approval steps.",
-    examples: [
-      "AI chatbot that answers from your docs and pricing",
-      "Automated quote generation with a human approval step",
-      "Multi-tool agent handling enquiries end-to-end",
-    ],
-  },
-];
-
 const CARE_PLAN_INCLUDED = [
-  "Monitoring for automation failures",
+  "Monitoring for system failures",
   "Fixes when a connected API or tool changes behaviour",
   "A set number of hours each month for small tweaks",
 ];
@@ -113,23 +74,23 @@ const HOSTING_INCLUDED = [
 const FAQS = [
   {
     q: "Do I need technical knowledge to work with you?",
-    a: "None at all. We handle the technical side completely. You describe what you want to achieve in plain language - we make it happen and explain what we've built.",
+    a: "None at all. We handle the technical side completely. You describe the problem in plain language, we design the system and explain what we've built.",
+  },
+  {
+    q: "Do you just build websites?",
+    a: "No. A website might be part of the system we build, but the goal is always the underlying problem: a website on its own rarely fixes lost enquiries or scattered customer data. We look at the whole picture.",
   },
   {
     q: "How quickly can you get something live?",
-    a: "Most automation projects are live within 3-7 days of the call. Hosting and email setup is usually same-day or next-day.",
+    a: "Most business systems are live within 1-3 weeks of the initial call, depending on scope. Hosting and email setup is usually same-day or next-day.",
   },
   {
-    q: "What tools does the automation connect to?",
-    a: "Anything you're already using - Gmail, Outlook, Google Sheets, Notion, Xero, QuickBooks, Stripe, Calendly, Typeform, and hundreds more. If it has an API or a webhook, we can connect to it.",
-  },
-  {
-    q: "What if something breaks?",
-    a: "All setups include a testing period and initial support. If something breaks after that, you can contact us and we'll sort it - or take out a Care Plan if you'd rather things were monitored proactively.",
+    q: "What tools do you connect to?",
+    a: "Whatever you're already using: Gmail, Outlook, Google Sheets, Notion, Xero, QuickBooks, Stripe, Calendly, Typeform and hundreds more. If it has an API or a webhook, we can connect to it.",
   },
   {
     q: "Where's my data hosted, and who can see it?",
-    a: "Everything runs on EU-based infrastructure. Only the person building and maintaining your automation has access to your n8n instance and credentials - it's never shared beyond that. If you offboard, we hand over or delete your workflows and credentials at your instruction - your data doesn't sit on our systems afterwards.",
+    a: "Everything runs on EU-based infrastructure. Only the person building and maintaining your system has access to it, it's never shared beyond that. If you offboard, we hand over or delete your systems and credentials at your instruction.",
   },
 ];
 
@@ -142,84 +103,110 @@ export default function Services() {
           <div className="eyebrow justify-center">Services</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">What we build.</h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            Pick one thing that&apos;s eating your time. We&apos;ll automate it. Here&apos;s
-            what that looks like in practice.
+            We find the problem first. What we build to fix it usually falls into one
+            of three areas.
           </p>
         </div>
       </section>
 
       <section className="relative py-16">
         <SectionSpine side="left" branch="out" />
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal className="relative max-w-2xl">
-            <span className="absolute top-0 right-0 hidden rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light sm:inline-block">
-              Core service
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              01
+            </span>
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={HOSTING_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Digital Foundations
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              The digital infrastructure a business needs to operate properly online
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                Website, domain, professional email, forms, customer intake, booking,
+                basic CRM and analytics. Not a website for its own sake, the
+                infrastructure that supports how the business actually operates and
+                competes.
+              </p>
+              <p>
+                We design the right foundation for what you need, then connect it to
+                the rest of the business rather than leaving it as an island.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              02
             </span>
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
               <ServiceIcon shape={AUTOMATION_ICON} />
             </div>
             <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              AI Workflow Automation
+              Business Systems
             </span>
             <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              Automate the tasks that keep coming back
+              The systems behind day-to-day operations
             </h2>
             <div className="mt-5 flex flex-col gap-4 text-text-secondary">
               <p>
-                Every business has a handful of tasks that happen over and over - chasing
-                invoices, responding to enquiries, updating spreadsheets, sending
-                confirmations. We build automations that do these things automatically,
-                reliably, and without you having to think about them.
+                Process design, workflow systems, integrations, databases, CRM,
+                automation, internal tools and reporting. We connect the moving parts
+                of the business and remove the friction between them.
               </p>
               <p>
-                We use n8n as our core automation tool, connected to whatever software
-                you&apos;re already using - Gmail, Outlook, Google Sheets, Notion, Xero,
-                and hundreds more. No ripping out your current setup.
+                We use n8n as our core automation tool where automation is the right
+                answer, connected to whatever software you&apos;re already using: Gmail,
+                Outlook, Google Sheets, Notion, Xero, and hundreds more.
               </p>
             </div>
-            <p className="mt-5 text-sm font-medium text-green-light">
-              Agency-quality builds, priced below what UK agencies charge for the same
-              thing.
-            </p>
-          </Reveal>
-          <Reveal className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {AUTOMATION_TIERS.map((t) => (
-              <div
-                key={t.name}
-                className="card-hover relative rounded-2xl border border-border bg-bg-2 p-7"
-              >
-                <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-                  {t.tag}
-                </span>
-                <h3 className="mt-2 text-xl">{t.name}</h3>
-                <p className="mt-1 text-lg text-text-primary">{t.price}</p>
-                <p className="mt-3 text-sm text-text-secondary">{t.desc}</p>
-                <p className="mt-5 text-xs font-medium uppercase tracking-wider text-text-muted">
-                  Examples
-                </p>
-                <div className="mt-3 flex flex-col gap-2">
-                  {t.examples.map((e) => (
-                    <div key={e} className="flex items-start gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
-                      <span className="text-sm text-text-secondary">{e}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </Reveal>
-          <Reveal className="mt-6 rounded-2xl border border-border bg-bg-2 p-6 text-sm text-text-secondary">
-            <span className="text-text-primary">A note on Complex / AI Agent builds:</span>{" "}
-            AI-agent builds that use OpenAI or Anthropic&apos;s models carry ongoing API
-            usage costs on top of the build fee - this scales with how much the
-            automation is actually used. In most cases you&apos;ll hold your own API key
-            so usage is billed directly to you at cost, with full visibility. We&apos;ll
-            always tell you the expected running cost before you commit.
           </Reveal>
           <p className="mt-4 text-xs text-text-muted">
-            Two rounds of revisions are included in every fixed price - further changes
-            are quoted separately.
+            Two rounds of revisions are included in every fixed-price system, further
+            changes are quoted separately.
           </p>
+        </div>
+      </section>
+
+      <section className="relative py-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
+            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
+              03
+            </span>
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
+              <ServiceIcon shape={INTELLIGENT_ICON} />
+            </div>
+            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              Intelligent Systems
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
+              AI, used where it genuinely earns its place
+            </h2>
+            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
+              <p>
+                AI-assisted workflows, document processing, classification, intelligent
+                enquiry handling, decision support and advanced reporting. AI is a
+                capability we bring into a system when it improves the outcome, not a
+                default we reach for.
+              </p>
+              <p>
+                Anything using OpenAI or Anthropic&apos;s models carries ongoing API usage
+                costs on top of the build, scaled to how much it&apos;s actually used. In
+                most cases you&apos;ll hold your own API key, so usage is billed to you at
+                cost with full visibility. We&apos;ll always tell you the expected running
+                cost before you commit.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -240,7 +227,7 @@ export default function Services() {
             </h2>
             <div className="mt-5 flex flex-col gap-4 text-text-secondary">
               <p>
-                Not required - your automation keeps working without it, and this
+                Not required, your system keeps working without it, and this
                 doesn&apos;t change our no-long-contracts promise. No forced ongoing
                 payment, cancel any time.
               </p>
@@ -257,8 +244,8 @@ export default function Services() {
               ))}
             </div>
             <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">£150–400/month.</span> Scoped to how
-              many automations you have and how much monitoring you want.
+              <span className="text-text-primary">From £100/month.</span> Scoped to how
+              many systems you have and how much monitoring you want.
             </div>
           </Reveal>
         </div>
@@ -337,7 +324,7 @@ export default function Services() {
                 late.
               </p>
               <p>
-                Want email automation on top? We can build that in. Your enquiry form
+                Want automation on top? We can build that in. Your enquiry form
                 auto-responds. Your invoices chase themselves.
               </p>
               <p>
@@ -411,15 +398,15 @@ export default function Services() {
           <Reveal>
             <h2 className="text-3xl sm:text-[2.25rem]">Not sure where to start?</h2>
             <p className="mx-auto mt-4 max-w-lg text-text-secondary">
-              Book a free call. We&apos;ll talk through what&apos;s slowing you down and
-              tell you honestly whether automation would help - no pitch, no pressure.
+              Talk to us. We&apos;ll talk through what&apos;s slowing you down and tell
+              you honestly whether a system would help, no pitch, no pressure.
             </p>
             <Link
               href="/contact"
               prefetch={false}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 font-medium text-white shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-light"
             >
-              Book a free call
+              Talk about a problem
             </Link>
           </Reveal>
         </div>

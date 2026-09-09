@@ -16,11 +16,11 @@ export default function Calculator() {
       <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
         <div className="eyebrow justify-center">ROI Calculator</div>
         <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-          What&apos;s your admin actually costing you?
+          What&apos;s the manual way actually costing you?
         </h1>
         <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-          Plug in a task you do by hand, see the annual cost, and how quickly an
-          automation pays for itself.
+          Plug in a task you do by hand, see the annual cost, and how quickly the
+          right system pays for itself.
         </p>
       </div>
 

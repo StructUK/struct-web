@@ -17,12 +17,12 @@ const NEXT_STEPS = [
   {
     n: "01",
     title: "You hear back as soon as possible",
-    desc: "We'll reply with a few questions or a link to book a call - whichever makes more sense for what you've told us.",
+    desc: "We'll reply with a few questions or a link to book a call, whichever makes more sense for what you've told us.",
   },
   {
     n: "02",
     title: "Free 20-minute call",
-    desc: "No pitch. We ask about your business, where the time is going, and whether automation would actually help. Honest conversation.",
+    desc: "No pitch. We ask about your business, where the time and money are going, and whether a system would actually help. Honest conversation.",
   },
   {
     n: "03",
@@ -40,8 +40,8 @@ export default function Contact() {
           <div className="eyebrow justify-center">Contact</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">Let&apos;s talk.</h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            Book a free 20-minute call or send us a message. We&apos;ll get back to you
-            as soon as possible.
+            Tell us what&apos;s not working. Book a free 20-minute call or send a
+            message, we&apos;ll get back to you as soon as possible.
           </p>
         </div>
       </section>

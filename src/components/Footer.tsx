@@ -14,7 +14,7 @@ export default function Footer() {
             className="h-[24px] w-auto"
           />
           <p className="text-sm text-text-secondary">
-            AI Automation and Digital Services.
+            Business systems and digital infrastructure.
           </p>
         </div>
         <div className="flex flex-wrap gap-7">

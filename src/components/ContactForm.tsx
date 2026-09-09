@@ -18,7 +18,17 @@ export default function ContactForm() {
     const formData = new FormData(form);
     const name = formData.get("name");
     const business = formData.get("business");
+    const website = formData.get("website");
+    const improve = formData.get("improve");
+    const friction = formData.get("friction");
+    const context = formData.get("context");
     setStatus("sending");
+
+    const message = [
+      `What they're trying to improve: ${improve}`,
+      `What's taking too much time or causing problems: ${friction}`,
+      `Additional context: ${context || "None provided"}`,
+    ].join("\n\n");
 
     try {
       await emailjs.send(
@@ -28,8 +38,9 @@ export default function ContactForm() {
           from_name: name,
           from_email: formData.get("email"),
           business_name: business || "Not provided",
+          website: website || "Not provided",
           subject: `Website enquiry from ${name}${business ? ` (${business})` : ""}`,
-          message: formData.get("message"),
+          message,
         },
         { publicKey: PUBLIC_KEY },
       );
@@ -72,29 +83,71 @@ export default function ContactForm() {
         />
       </div>
 
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="contact-business" className="text-sm text-text-secondary">
+            Business name (optional)
+          </label>
+          <input
+            id="contact-business"
+            name="business"
+            type="text"
+            placeholder="Your business"
+            className="rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="contact-website" className="text-sm text-text-secondary">
+            Website (optional)
+          </label>
+          <input
+            id="contact-website"
+            name="website"
+            type="text"
+            placeholder="yourbusiness.co.uk"
+            className="rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
+          />
+        </div>
+      </div>
+
       <div className="flex flex-col gap-2">
-        <label htmlFor="contact-business" className="text-sm text-text-secondary">
-          Business name (optional)
+        <label htmlFor="contact-improve" className="text-sm text-text-secondary">
+          What are you trying to improve?
         </label>
-        <input
-          id="contact-business"
-          name="business"
-          type="text"
-          placeholder="Your business"
-          className="rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
+        <textarea
+          id="contact-improve"
+          name="improve"
+          rows={2}
+          required
+          placeholder="e.g. How we handle new enquiries"
+          className="resize-y rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
         />
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="contact-message" className="text-sm text-text-secondary">
-          Tell us your problem
+        <label htmlFor="contact-friction" className="text-sm text-text-secondary">
+          What currently takes too much time or causes problems?
         </label>
         <textarea
-          id="contact-message"
-          name="message"
+          id="contact-friction"
+          name="friction"
           rows={4}
           required
-          placeholder={'e.g. "We get a lot of enquiries and reply to them manually — it takes hours every week."'}
+          placeholder="e.g. We get a lot of enquiries and reply to them manually. It takes hours every week."
+          className="resize-y rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
+        />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor="contact-context" className="text-sm text-text-secondary">
+          Anything else we should know? (optional)
+        </label>
+        <textarea
+          id="contact-context"
+          name="context"
+          rows={3}
+          placeholder="Any extra context that would help"
           className="resize-y rounded-lg border border-border bg-bg-2 px-4 py-3 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-green"
         />
       </div>
