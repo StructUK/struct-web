@@ -25,6 +25,8 @@ export default function ContactForm() {
     setStatus("sending");
 
     const message = [
+      `Business: ${business || "Not provided"}`,
+      `Website: ${website || "Not provided"}`,
       `What they're trying to improve: ${improve}`,
       `What's taking too much time or causing problems: ${friction}`,
       `Additional context: ${context || "None provided"}`,
