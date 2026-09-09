@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 220" font-family="DM Sans, Arial, sans-serif">
   <rect width="1400" height="220" fill="#0d0d0d"/>
-  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">Monthly Report Generator — workflow diagram</text>
+  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">Monthly Report Generator: workflow diagram</text>
 
   <g font-size="12" fill="#e8e8e8">
     <rect x="30" y="70" width="170" height="55" rx="8" fill="#132313" stroke="#3DBF3D" stroke-width="2"/>
@@ -42,5 +42,5 @@
     </marker>
   </defs>
 
-  <text x="30" y="200" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json — not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
+  <text x="30" y="200" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json, not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
 </svg>

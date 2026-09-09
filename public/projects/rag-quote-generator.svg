@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480" font-family="DM Sans, Arial, sans-serif">
   <rect width="1400" height="480" fill="#0d0d0d"/>
-  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">RAG Quote &amp; Proposal Generator — workflow diagram</text>
+  <text x="30" y="40" fill="#3DBF3D" font-family="Syne, Arial, sans-serif" font-size="22" font-weight="700">RAG Quote &amp; Proposal Generator: workflow diagram</text>
 
   <text x="30" y="80" fill="#3DBF3D" font-size="14" font-weight="700">1. LOAD PRICING KNOWLEDGE BASE (run once, manually)</text>
   <line x1="30" y1="90" x2="1370" y2="90" stroke="#2A9D2A" stroke-width="1" opacity="0.4"/>
@@ -89,5 +89,5 @@
     </marker>
   </defs>
 
-  <text x="30" y="465" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json — not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
+  <text x="30" y="465" fill="#6a6a6a" font-size="11">Diagram generated from the exported workflow.json, not a live n8n canvas screenshot (browser capture unavailable in this build).</text>
 </svg>
