@@ -149,6 +149,10 @@ const SCHEMA = {
     addressCountry: "GB",
   },
   areaServed: "GB",
+  sameAs: [
+    "https://www.linkedin.com/company/struct-solutions",
+    "https://www.instagram.com/structuk/",
+  ],
   serviceType: [
     "Business Systems Design",
     "Digital Infrastructure",
