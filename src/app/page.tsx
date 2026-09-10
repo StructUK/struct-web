@@ -143,6 +143,11 @@ const SCHEMA = {
   email: "hello@struct.solutions",
   description:
     "Struct Solutions designs and builds the systems behind better businesses: websites, professional email, CRM, business process and workflow systems, and AI where it genuinely helps.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Manchester",
+    addressCountry: "GB",
+  },
   areaServed: "GB",
   serviceType: [
     "Business Systems Design",

@@ -7,7 +7,7 @@ import GlowBloom from "@/components/GlowBloom";
 import SectionDivider from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
-  title: "Example",
+  title: "Case Study: Missed Call to WhatsApp System",
   description:
     "How two of Struct Solutions' systems work together: turning a missed call into a WhatsApp conversation, then handling that conversation with an AI agent grounded in the business's own knowledge base.",
   alternates: { canonical: "/work" },
@@ -92,7 +92,7 @@ export default function Work() {
       <section className="relative overflow-hidden pt-44 pb-24">
         <Lattice variant="page" />
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-          <div className="eyebrow justify-center">Example</div>
+          <div className="eyebrow justify-center">Case Study</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
             From missed call
             <br />

@@ -251,6 +251,20 @@ export default function Services() {
       <section className="relative py-24">
         <SectionSpine side="right" branch="in" />
         <div className="mx-auto max-w-3xl px-6">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: FAQS.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              }),
+            }}
+          />
           <Reveal className="mb-12 text-center">
             <div className="eyebrow justify-center">FAQ</div>
             <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Common questions.</h2>
