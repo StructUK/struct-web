@@ -34,11 +34,6 @@ const HOSTING_ICON: IconShape = {
   ],
 };
 
-const CARE_ICON: IconShape = {
-  path: "M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z",
-  circle: { cx: 12, cy: 12, r: 2.5 },
-};
-
 const INTELLIGENT_ICON: IconShape = {
   circles: [
     { cx: 8, cy: 9, r: 2 },
@@ -47,12 +42,6 @@ const INTELLIGENT_ICON: IconShape = {
   ],
   path: "M8 9 12 17M16 9 12 17M8 9 16 9",
 };
-
-const CARE_PLAN_INCLUDED = [
-  "Monitoring so things don't quietly break",
-  "Fixes when a connected API or tool changes behaviour",
-  "A set number of hours each month for small tweaks",
-];
 
 const FAQS = [
   {
@@ -203,47 +192,6 @@ export default function Services() {
             Two rounds of revisions are included in every fixed-price build, further
             changes are quoted separately.
           </p>
-        </div>
-      </section>
-
-      <section className="relative py-8">
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal className="card-hover relative rounded-2xl border border-border bg-bg-2 p-8 sm:p-10">
-            <span className="absolute top-8 right-8 rounded-full bg-green-glow px-2.5 py-1 text-[0.7rem] font-medium text-green-light">
-              Optional
-            </span>
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-green-glow">
-              <ServiceIcon shape={CARE_ICON} />
-            </div>
-            <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-              Care Plan
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-[1.75rem]">
-              If you&apos;d rather we kept an eye on it
-            </h2>
-            <div className="mt-5 flex flex-col gap-4 text-text-secondary">
-              <p>
-                Not required, everything keeps working without it, and this
-                doesn&apos;t change our no-long-contracts promise. No forced ongoing
-                payment, cancel any time.
-              </p>
-            </div>
-            <p className="mt-7 text-xs font-medium uppercase tracking-wider text-text-muted">
-              What&apos;s included
-            </p>
-            <div className="mt-3 flex flex-col gap-2">
-              {CARE_PLAN_INCLUDED.map((e) => (
-                <div key={e} className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green" />
-                  <span className="text-sm text-text-secondary">{e}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-7 border-t border-border pt-5 text-sm text-text-secondary">
-              <span className="text-text-primary">From £100/month.</span> Scoped to how
-              much you&apos;ve got running and how much monitoring you want.
-            </div>
-          </Reveal>
         </div>
       </section>
 
