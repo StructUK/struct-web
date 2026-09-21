@@ -8,7 +8,7 @@ import HeroBackground from "@/components/HeroBackground";
 import ServiceIcon, { type IconShape } from "@/components/ServiceIcon";
 
 const TICKER_ITEMS = [
-  "Business Systems",
+  "Business Framework",
   "Digital Foundations",
   "UK-Based",
   "No Long Contracts",
@@ -20,9 +20,8 @@ const TICKER_ITEMS = [
   "Manchester-Based",
 ];
 
-const SERVICE_CARDS: { tag: string; title: string; desc: string; icon: IconShape }[] = [
+const SERVICE_CARDS: { title: string; desc: string; icon: IconShape }[] = [
   {
-    tag: "Foundations",
     title: "Digital Foundations",
     desc: "The website, domain, email, forms and customer data a business needs to operate properly online, set up right and connected to everything else.",
     icon: {
@@ -37,9 +36,8 @@ const SERVICE_CARDS: { tag: string; title: string; desc: string; icon: IconShape
     },
   },
   {
-    tag: "Systems",
-    title: "Business Systems",
-    desc: "The processes, workflows, integrations and tools that run day to day. We connect the moving parts and remove the friction between them.",
+    title: "Framework",
+    desc: "The processes, workflows, integrations and systems that run day to day. We connect the moving parts and remove the friction between them.",
     icon: {
       path: "M12 7v6M12 13 6.3 17.3M12 13l5.7 4.3",
       circles: [
@@ -50,9 +48,8 @@ const SERVICE_CARDS: { tag: string; title: string; desc: string; icon: IconShape
     },
   },
   {
-    tag: "Intelligent",
-    title: "Intelligent Systems",
-    desc: "AI applied where it genuinely helps: handling enquiries, processing documents, flagging what needs attention. A capability inside the system, not the point of it.",
+    title: "Intelligence",
+    desc: "AI applied where it genuinely helps: handling enquiries, processing documents, flagging what needs attention. A capability we build in, not the point of it.",
     icon: {
       circles: [
         { cx: 8, cy: 9, r: 2 },
@@ -78,7 +75,7 @@ const STEPS = [
   {
     n: "03",
     title: "Design",
-    desc: "We design a better process and the system to support it, before deciding on any particular technology.",
+    desc: "We design a better process and the framework to support it, before deciding on any particular technology.",
   },
   {
     n: "04",
@@ -93,7 +90,7 @@ const STEPS = [
   {
     n: "06",
     title: "Improve",
-    desc: "We monitor how the system performs and adjust it as the business changes.",
+    desc: "We monitor how it performs and adjust it as the business changes.",
   },
 ];
 
@@ -111,12 +108,12 @@ const PROBLEM_EXAMPLES = [
   {
     problem: "We're losing enquiries.",
     answer:
-      "We design an enquiry-to-client system that captures every enquiry, organises it, follows up automatically where it should, alerts your team when it matters, and tracks what happened to it.",
+      "We build an enquiry-to-client pipeline that captures every enquiry, organises it, follows up automatically where it should, alerts your team when it matters, and tracks what happened to it.",
   },
   {
     problem: "Our team spends hours doing admin.",
     answer:
-      "We redesign the process and connect the systems behind it, so the manual work that shouldn't exist stops existing.",
+      "We redesign the process and connect what's behind it, so the manual work that shouldn't exist stops existing.",
   },
   {
     problem: "Our digital setup is held together with different tools.",
@@ -142,7 +139,7 @@ const SCHEMA = {
   url: "https://www.struct.solutions/",
   email: "hello@struct.solutions",
   description:
-    "Struct Solutions designs and builds the systems behind better businesses: websites, professional email, CRM, business process and workflow systems, and AI where it genuinely helps.",
+    "Struct Solutions designs and builds the foundations, framework and intelligence behind better businesses: websites, professional email, CRM, business process and workflow tooling, and AI where it genuinely helps.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Manchester",
@@ -154,7 +151,7 @@ const SCHEMA = {
     "https://www.instagram.com/structuk/",
   ],
   serviceType: [
-    "Business Systems Design",
+    "Business Framework Design",
     "Digital Infrastructure",
     "Business Process Improvement",
     "Workflow Automation",
@@ -173,16 +170,16 @@ export default function Home() {
         <HeroBackground />
         <Lattice variant="hero" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <div className="eyebrow justify-center">Business Systems Company</div>
+          <div className="eyebrow justify-center">Business, Structured.</div>
           <h1 className="mt-5 text-[2.75rem] sm:text-[3.5rem]">
             More business,
             <br />
             <em className="text-green-light not-italic">less boring.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-text-secondary">
-            We find problems in how businesses operate and build practical systems to
-            fix them: websites, professional email, CRM, workflow and reporting,
-            automation, and AI where it genuinely helps.
+            We find problems in how businesses operate and build the foundations,
+            framework and intelligence to fix them: websites, professional email, CRM,
+            workflow and reporting, automation, and AI where it genuinely helps.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -237,10 +234,7 @@ export default function Home() {
                 <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-green-glow">
                   <ServiceIcon shape={s.icon} />
                 </div>
-                <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-                  {s.tag}
-                </span>
-                <h3 className="mt-2 text-lg">{s.title}</h3>
+                <h3 className="text-lg">{s.title}</h3>
                 <p className="mt-2 text-sm text-text-secondary">{s.desc}</p>
               </div>
             ))}
@@ -292,8 +286,8 @@ export default function Home() {
               Built for businesses that are busy, not broken.
             </h2>
             <p className="mt-5 max-w-xl text-text-secondary">
-              You don&apos;t need a big team or a big budget to benefit from a better
-              system. If your business runs on inefficient, disconnected or manual ways
+              You don&apos;t need a big team or a big budget to build on solid
+              foundations. If your business runs on inefficient, disconnected or manual ways
               of working, or your digital setup is held together with different tools,
               that&apos;s exactly what we sort out.
             </p>
@@ -372,7 +366,7 @@ export default function Home() {
             <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Priced around the problem.</h2>
             <p className="mx-auto mt-4 max-w-lg text-text-secondary">
               Every business is different, so we don&apos;t sell off-the-shelf packages.
-              We understand the problem, design the right system, and quote the work
+              We understand the problem, design what&apos;s needed, and quote the work
               before we build it.
             </p>
             <Link

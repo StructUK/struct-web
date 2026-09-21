@@ -7,9 +7,9 @@ import GlowBloom from "@/components/GlowBloom";
 import SectionDivider from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
-  title: "Case Study: Missed Call to WhatsApp System",
+  title: "Case Study: Missed Call to WhatsApp Workflow",
   description:
-    "How two of Struct Solutions' systems work together: turning a missed call into a WhatsApp conversation, then handling that conversation with an AI agent grounded in the business's own knowledge base.",
+    "How two automated workflows from Struct Solutions work together: turning a missed call into a WhatsApp conversation, then handling that conversation with an AI agent grounded in the business's own knowledge base.",
   alternates: { canonical: "/work" },
 };
 
@@ -55,7 +55,7 @@ const HANDOFF_STEPS = [
   {
     n: "02",
     title: "Check who's already talking to them",
-    desc: "The system checks whether a team member is already mid-conversation with this lead.",
+    desc: "It checks whether a team member is already mid-conversation with this lead.",
   },
   {
     n: "03",
@@ -80,7 +80,7 @@ const HANDOFF_STEPS = [
 ];
 
 const STATS = [
-  { value: "2", label: "Connected systems" },
+  { value: "2", label: "Connected workflows" },
   { value: "<1 min", label: "Time to first message" },
   { value: "24/7", label: "Coverage" },
   { value: "0", label: "Conversations left hanging" },
@@ -99,7 +99,7 @@ export default function Work() {
             <em className="text-green-light not-italic">to handled conversation.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            Here&apos;s exactly how two of our systems work together, start to finish,
+            Here&apos;s exactly how two connected workflows work together, start to finish,
             the same kind of build we do for the businesses we work with.
           </p>
         </div>
@@ -130,9 +130,9 @@ export default function Work() {
         <div className="mx-auto max-w-5xl px-6">
           <Reveal className="mb-14 max-w-xl">
             <div className="eyebrow">The build</div>
-            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Two systems, one handoff.</h2>
+            <h2 className="mt-4 text-3xl sm:text-[2.25rem]">Two workflows, one handoff.</h2>
             <p className="mt-5 text-text-secondary">
-              The first system catches the missed call and starts the conversation.
+              The first workflow catches the missed call and starts the conversation.
               The second picks that conversation up, answers it properly, and knows
               when to bring in a person. Neither one does the whole job alone.
             </p>
@@ -141,7 +141,7 @@ export default function Work() {
           <Reveal className="mb-10">
             <h3 className="text-xl sm:text-[1.5rem]">1. Missed-Call Follow-up</h3>
             <p className="mt-3 max-w-2xl text-text-secondary">
-              The moment a call goes unanswered, this system sends the caller a
+              The moment a call goes unanswered, this workflow sends the caller a
               WhatsApp message before they&apos;ve even thought about calling anyone
               else.
             </p>
@@ -188,7 +188,7 @@ export default function Work() {
           <Reveal className="mb-10">
             <h3 className="text-xl sm:text-[1.5rem]">2. AI Support Handoff</h3>
             <p className="mt-3 max-w-2xl text-text-secondary">
-              When the lead replies, this system takes the conversation from there,
+              When the lead replies, this workflow takes the conversation from there,
               answering from the business&apos;s own knowledge, remembering the
               thread, and calling in a person the moment it should.
             </p>

@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Open-source systems built by Struct Solutions: real templates for lead recovery, quoting, inbox handling, customer support and reporting.",
+    "Open-source workflows built by Struct Solutions: real templates for lead recovery, quoting, inbox handling, customer support and reporting.",
   alternates: { canonical: "/projects" },
 };
 
@@ -20,7 +20,7 @@ const PROJECTS = [
   },
   {
     name: "RAG Quote Generator",
-    tag: "Quoting System",
+    tag: "Quoting Workflow",
     desc: "Drafts itemised job quotes grounded in your own pricing knowledge base, so estimates stay consistent no matter who's asking.",
     repoUrl: "https://github.com/StructUK/n8n-rag-quote-generator",
     diagramSrc: "/projects/rag-quote-generator.svg",
@@ -63,12 +63,12 @@ export default function Projects() {
         <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
           <div className="eyebrow justify-center">Projects</div>
           <h1 className="mt-5 text-[2.5rem] sm:text-[3rem]">
-            Systems we&apos;ve
+            Workflows we&apos;ve
             <br />
             <em className="text-green-light not-italic">open-sourced.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
-            A few of the systems behind our own builds, real templates, not
+            A few of the workflows behind our own builds, real templates, not
             slideware, published on GitHub for anyone to inspect or adapt.
           </p>
         </div>

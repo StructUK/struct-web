@@ -9,7 +9,7 @@ import SectionDivider from "@/components/SectionDivider";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Struct Solutions is a lean business systems company for UK small businesses: we find the problems in how a business operates and build the systems to fix them.",
+    "Struct Solutions is a lean team for UK small businesses: we find the problems in how a business operates and build the foundations, framework and intelligence to fix them.",
   alternates: { canonical: "/about" },
 };
 
@@ -23,8 +23,8 @@ const VALUES = [
     desc: "No jumping straight to a tool. We understand what's really happening in the business before we design anything.",
   },
   {
-    title: "We use the simplest effective system",
-    desc: "The cleverest answer isn't the best one if a simpler system solves the same problem. We build what the problem needs, nothing more.",
+    title: "We use the simplest thing that works",
+    desc: "The cleverest answer isn't the best one if something simpler solves the same problem. We build what the problem needs, nothing more.",
   },
   {
     title: "We build for the real business",
@@ -32,11 +32,11 @@ const VALUES = [
   },
   {
     title: "We explain what we've built",
-    desc: "You'll always know what your system does, how it works, and what to tell us if something changes.",
+    desc: "You'll always know what we've built, how it works, and what to tell us if something changes.",
   },
   {
     title: "We own the result",
-    desc: "We don't hand over a system and disappear. If it's not working the way it should, that's on us to fix.",
+    desc: "We don't hand it over and disappear. If it's not working the way it should, that's on us to fix.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function About() {
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-text-secondary">
             No fluff. No layers. Just someone who understands how a business runs and
-            builds the systems to fix what isn&apos;t working.
+            builds what&apos;s needed to fix what isn&apos;t working.
           </p>
         </div>
       </section>
@@ -65,23 +65,23 @@ export default function About() {
           <Reveal className="flex flex-col gap-5 text-text-secondary">
             <p>
               Struct Solutions exists to help businesses solve problems created by
-              inefficient processes, disconnected systems, repetitive manual work, poor
+              inefficient processes, disconnected tools, repetitive manual work, poor
               digital foundations and information that&apos;s scattered across
               spreadsheets, inboxes and someone&apos;s memory.
             </p>
             <p>
               We look at how a business actually works, find where time, money,
-              opportunities or accuracy are being lost, and design a practical system to
-              fix it. The system could be a website, a CRM, an integration, a piece of
-              automation, an internal tool, or AI, whichever combination actually solves
-              the problem. The technology isn&apos;t the product. The solved problem is.
+              opportunities or accuracy are being lost, and design what&apos;s needed to
+              fix it - a website, a CRM, an integration, a piece of automation, an
+              internal tool, or AI, whichever combination actually solves the problem.
+              The technology isn&apos;t the product. The solved problem is.
             </p>
             <p>
               We&apos;re a lean, specialist company, which means no account managers, no
               handoffs, and no one translating what you want into something a developer
               will actually build. You work directly with the person doing the work.
-              Most clients see their first piece of the system running within a week or
-              two of the initial call.
+              Most clients see their first piece of it running within a week or two of
+              the initial call.
             </p>
           </Reveal>
         </div>

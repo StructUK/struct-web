@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Cost Calculator",
   description:
-    "See what a manual task is actually costing your business each year, and how fast the right system pays for itself.",
+    "See what a manual task is actually costing your business each year, and how fast the right fix pays for itself.",
   alternates: { canonical: "/calculator" },
 };
 
@@ -20,7 +20,7 @@ export default function Calculator() {
         </h1>
         <p className="mx-auto mt-6 max-w-lg text-text-secondary">
           Plug in a task you do by hand, see the annual cost, and how quickly the
-          right system pays for itself.
+          right fix pays for itself.
         </p>
       </div>
 

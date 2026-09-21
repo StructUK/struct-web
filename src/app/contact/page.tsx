@@ -22,7 +22,7 @@ const NEXT_STEPS = [
   {
     n: "02",
     title: "Free 20-minute call",
-    desc: "No pitch. We ask about your business, where the time and money are going, and whether a system would actually help. Honest conversation.",
+    desc: "No pitch. We ask about your business, where the time and money are going, and whether we can actually help. Honest conversation.",
   },
   {
     n: "03",
