@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "Struct Solutions finds the problems in how a business operates and builds the foundations, framework and intelligence to fix them, scoped around the problem, not the technology.",
   icons: {
     icon: [
+      { url: "/imgs/favicon.svg", type: "image/svg+xml" },
       { url: "/imgs/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/imgs/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
